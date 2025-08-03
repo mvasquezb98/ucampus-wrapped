@@ -1,0 +1,262 @@
+2025-07-10 00:49:04 - INFO - ====== WebDriver manager ======
+2025-07-10 00:49:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:49:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:49:07 - INFO - There is no [win64] chromedriver "138.0.7204.94" for browser google-chrome "138.0.7204" in cache
+2025-07-10 00:49:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:49:07 - INFO - WebDriver version 138.0.7204.94 selected
+2025-07-10 00:49:07 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win32/chromedriver-win32.zip
+2025-07-10 00:49:07 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win32/chromedriver-win32.zip
+2025-07-10 00:49:07 - INFO - Driver downloading response is 200
+2025-07-10 00:49:08 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:49:09 - INFO - Driver has been saved in cache [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94]
+2025-07-10 00:49:53 - INFO - 🔁 Navegando a página de login...
+2025-07-10 00:49:57 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 00:49:57 - INFO - ✅ Campo usuario encontrado
+2025-07-10 00:49:57 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 00:49:57 - INFO - 🧾 Usuario ingresado
+2025-07-10 00:49:57 - INFO - 🧾 Contraseña ingresada
+2025-07-10 00:49:57 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 00:49:59 - INFO - 🚀 Formulario enviado
+2025-07-10 00:49:59 - INFO - ✅ Login exitoso
+2025-07-10 00:50:19 - ERROR - Error during export
+Traceback (most recent call last):
+  File "<ipython-input-1-3eed0ba633aa>", line 50, in <module>
+    excel_exporter(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampussy\export\excel_exporter.py", line 5, in excel_exporter
+    final_path = path+file_name+".xlsx"
+TypeError: unsupported operand type(s) for +: 'WindowsPath' and 'str'
+2025-07-10 00:59:57 - INFO - ====== WebDriver manager ======
+2025-07-10 00:59:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:59:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 00:59:58 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:00:18 - INFO - 🔁 Navegando a página de login...
+2025-07-10 01:00:22 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 01:00:22 - INFO - ✅ Campo usuario encontrado
+2025-07-10 01:00:22 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 01:00:22 - INFO - 🧾 Usuario ingresado
+2025-07-10 01:00:22 - INFO - 🧾 Contraseña ingresada
+2025-07-10 01:00:22 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 01:00:23 - INFO - 🚀 Formulario enviado
+2025-07-10 01:00:23 - INFO - ✅ Login exitoso
+2025-07-10 01:00:42 - ERROR - Error during export
+Traceback (most recent call last):
+  File "<ipython-input-2-3eed0ba633aa>", line 50, in <module>
+    excel_exporter(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampussy\export\excel_exporter.py", line 5, in excel_exporter
+    final_path = path / f"{file_name}.xlsx"
+TypeError: unsupported operand type(s) for +: 'WindowsPath' and 'str'
+2025-07-10 01:02:48 - INFO - ====== WebDriver manager ======
+2025-07-10 01:02:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:02:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:02:49 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:03:07 - INFO - 🔁 Navegando a página de login...
+2025-07-10 01:03:11 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 01:03:11 - INFO - ✅ Campo usuario encontrado
+2025-07-10 01:03:11 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 01:03:11 - INFO - 🧾 Usuario ingresado
+2025-07-10 01:03:11 - INFO - 🧾 Contraseña ingresada
+2025-07-10 01:03:11 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 01:03:13 - INFO - 🚀 Formulario enviado
+2025-07-10 01:03:13 - INFO - ✅ Login exitoso
+2025-07-10 01:03:24 - ERROR - Error during export
+Traceback (most recent call last):
+  File "<ipython-input-3-3eed0ba633aa>", line 50, in <module>
+    excel_exporter(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampussy\export\excel_exporter.py", line 5, in excel_exporter
+    final_path = path / f"{file_name}.xlsx"
+TypeError: unsupported operand type(s) for +: 'WindowsPath' and 'str'
+2025-07-10 01:07:12 - INFO - ====== WebDriver manager ======
+2025-07-10 01:07:13 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:07:13 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:07:13 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:07:58 - INFO - ====== WebDriver manager ======
+2025-07-10 01:07:59 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:07:59 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:07:59 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:08:21 - INFO - 🔁 Navegando a página de login...
+2025-07-10 01:08:24 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 01:08:24 - INFO - ✅ Campo usuario encontrado
+2025-07-10 01:08:25 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 01:08:25 - INFO - 🧾 Usuario ingresado
+2025-07-10 01:08:25 - INFO - 🧾 Contraseña ingresada
+2025-07-10 01:08:25 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 01:08:25 - INFO - 🚀 Formulario enviado
+2025-07-10 01:08:25 - INFO - ✅ Login exitoso
+2025-07-10 01:08:25 - ERROR - Error during scraping
+Traceback (most recent call last):
+  File "<ipython-input-2-3eed0ba633aa>", line 42, in <module>
+    df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento = extraer_datos_ucampus(driver)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampussy\core\ucampus.py", line 366, in extraer_datos_ucampus
+    df_cursos, df_semestre = datos_resumen(driver) # type: ignore
+TypeError: cannot unpack non-iterable NoneType object
+2025-07-10 01:08:25 - ERROR - Error during export
+Traceback (most recent call last):
+  File "<ipython-input-2-3eed0ba633aa>", line 50, in <module>
+    excel_exporter(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento)
+NameError: name 'df_indicadores' is not defined
+2025-07-10 01:09:05 - INFO - ====== WebDriver manager ======
+2025-07-10 01:09:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:09:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:09:07 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:09:25 - INFO - 🔁 Navegando a página de login...
+2025-07-10 01:09:28 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 01:09:29 - INFO - ✅ Campo usuario encontrado
+2025-07-10 01:09:29 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 01:09:29 - INFO - 🧾 Usuario ingresado
+2025-07-10 01:09:29 - INFO - 🧾 Contraseña ingresada
+2025-07-10 01:09:29 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 01:09:30 - INFO - 🚀 Formulario enviado
+2025-07-10 01:09:30 - INFO - ✅ Login exitoso
+2025-07-10 01:09:32 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-10 01:09:33 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-10 01:09:35 - WARNING - ⚠️ Año interceptado, usando JavaScript click.
+2025-07-10 01:09:37 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-10 01:09:38 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:38 - WARNING - ⚠️ No se encontró la opción para el año 2024.
+2025-07-10 01:09:38 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-10 01:09:39 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:40 - WARNING - ⚠️ No se encontró la opción para el año 2023.
+2025-07-10 01:09:40 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-10 01:09:41 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:42 - WARNING - ⚠️ No se encontró la opción para el año 2022.
+2025-07-10 01:09:42 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-10 01:09:43 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:43 - WARNING - ⚠️ No se encontró la opción para el año 2021.
+2025-07-10 01:09:43 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-10 01:09:44 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:45 - WARNING - ⚠️ No se encontró la opción para el año 2020.
+2025-07-10 01:09:45 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-10 01:09:46 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:47 - WARNING - ⚠️ No se encontró la opción para el año 2019.
+2025-07-10 01:09:47 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-10 01:09:48 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:09:48 - WARNING - ⚠️ No se encontró la opción para el año 2018.
+2025-07-10 01:09:48 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-10 01:09:49 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-10 01:09:51 - WARNING - ⚠️ Año interceptado, usando JavaScript click.
+2025-07-10 01:10:03 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-07-10 01:10:03 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-10 01:10:04 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:04 - WARNING - ⚠️ No se encontró la opción para el año 2024.
+2025-07-10 01:10:04 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-10 01:10:05 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:06 - WARNING - ⚠️ No se encontró la opción para el año 2023.
+2025-07-10 01:10:06 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-10 01:10:07 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:08 - WARNING - ⚠️ No se encontró la opción para el año 2022.
+2025-07-10 01:10:08 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-10 01:10:09 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:09 - WARNING - ⚠️ No se encontró la opción para el año 2021.
+2025-07-10 01:10:09 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-10 01:10:10 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:11 - WARNING - ⚠️ No se encontró la opción para el año 2020.
+2025-07-10 01:10:11 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-10 01:10:12 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:13 - WARNING - ⚠️ No se encontró la opción para el año 2019.
+2025-07-10 01:10:13 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-10 01:10:14 - WARNING - ⚠️ Dropdown interceptado, usando JavaScript click.
+2025-07-10 01:10:14 - WARNING - ⚠️ No se encontró la opción para el año 2018.
+2025-07-10 01:13:48 - INFO - ====== WebDriver manager ======
+2025-07-10 01:13:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:13:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 01:13:49 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-10 01:14:10 - INFO - 🔁 Navegando a página de login...
+2025-07-10 01:14:14 - INFO - 🔎 Esperando campo de usuario...
+2025-07-10 01:14:14 - INFO - ✅ Campo usuario encontrado
+2025-07-10 01:14:14 - INFO - ✅ Campo contraseña encontrado
+2025-07-10 01:14:14 - INFO - 🧾 Usuario ingresado
+2025-07-10 01:14:14 - INFO - 🧾 Contraseña ingresada
+2025-07-10 01:14:14 - INFO - ✅ Botón de ingreso encontrado
+2025-07-10 01:14:16 - INFO - 🚀 Formulario enviado
+2025-07-10 01:14:16 - INFO - ✅ Login exitoso
+2025-07-10 01:14:18 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-10 01:14:19 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-10 01:14:22 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-10 01:14:25 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-10 01:14:29 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-10 01:14:33 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-10 01:14:36 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-10 01:14:39 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-10 01:14:43 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-10 01:14:46 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-10 01:14:47 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-10 01:14:59 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-07-10 01:14:59 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-10 01:15:13 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2024.
+2025-07-10 01:15:13 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-10 01:15:26 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2023.
+2025-07-10 01:15:26 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-10 01:15:39 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2022.
+2025-07-10 01:15:39 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-10 01:15:52 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2021.
+2025-07-10 01:15:52 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-10 01:16:06 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2020.
+2025-07-10 01:16:06 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-10 01:16:09 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-10 01:16:22 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2018.
+2025-07-12 17:46:59 - INFO - ====== WebDriver manager ======
+2025-07-12 17:47:06 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 17:47:06 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 17:47:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 17:47:07 - INFO - WebDriver version 138.0.7204.94 selected
+2025-07-12 17:47:07 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win32/chromedriver-win32.zip
+2025-07-12 17:47:07 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win32/chromedriver-win32.zip
+2025-07-12 17:47:07 - INFO - Driver downloading response is 200
+2025-07-12 17:47:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 17:47:08 - INFO - Driver has been saved in cache [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94]
+2025-07-12 17:47:36 - INFO - 🔁 Navegando a página de login...
+2025-07-12 17:47:40 - INFO - 🔎 Esperando campo de usuario...
+2025-07-12 17:47:40 - INFO - ✅ Campo usuario encontrado
+2025-07-12 17:47:40 - INFO - ✅ Campo contraseña encontrado
+2025-07-12 17:47:40 - INFO - 🧾 Usuario ingresado
+2025-07-12 17:47:40 - INFO - 🧾 Contraseña ingresada
+2025-07-12 17:47:40 - INFO - ✅ Botón de ingreso encontrado
+2025-07-12 17:47:43 - INFO - 🚀 Formulario enviado
+2025-07-12 17:47:43 - INFO - ✅ Login exitoso
+2025-07-12 17:47:47 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-12 17:47:57 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-12 17:47:59 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-12 17:48:03 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-12 17:48:09 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-12 17:48:14 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-12 17:48:18 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-12 17:48:22 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-12 17:48:25 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-12 17:48:29 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-07-12 17:48:30 - INFO - 📆 Extrayendo datos del año 2025...
+2025-07-12 17:48:42 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-07-12 17:48:42 - INFO - 📆 Extrayendo datos del año 2024...
+2025-07-12 17:48:56 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2024.
+2025-07-12 17:48:56 - INFO - 📆 Extrayendo datos del año 2023...
+2025-07-12 17:49:10 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2023.
+2025-07-12 17:49:10 - INFO - 📆 Extrayendo datos del año 2022...
+2025-07-12 17:49:23 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2022.
+2025-07-12 17:49:23 - INFO - 📆 Extrayendo datos del año 2021...
+2025-07-12 17:49:36 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2021.
+2025-07-12 17:49:36 - INFO - 📆 Extrayendo datos del año 2020...
+2025-07-12 17:49:50 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2020.
+2025-07-12 17:49:50 - INFO - 📆 Extrayendo datos del año 2019...
+2025-07-12 17:49:53 - INFO - 📆 Extrayendo datos del año 2018...
+2025-07-12 17:50:07 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2018.
+2025-07-12 17:50:16 - INFO - 🔁 Navegando a página de login...
+2025-07-12 17:50:20 - INFO - 🔎 Esperando campo de usuario...
+2025-07-12 17:50:20 - INFO - ✅ Campo usuario encontrado
+2025-07-12 17:50:20 - INFO - ✅ Campo contraseña encontrado
+2025-07-12 17:50:20 - INFO - 🧾 Usuario ingresado
+2025-07-12 17:50:20 - INFO - 🧾 Contraseña ingresada
+2025-07-12 17:50:20 - INFO - ✅ Botón de ingreso encontrado
+2025-07-12 17:50:22 - INFO - 🚀 Formulario enviado
+2025-07-12 17:50:22 - INFO - ✅ Login exitoso
+2025-07-12 18:04:39 - INFO - ====== WebDriver manager ======
+2025-07-12 18:04:42 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 18:04:42 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-12 18:04:42 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\138.0.7204.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-12 18:05:08 - INFO - 🔁 Navegando a página de login...
+2025-07-12 18:05:12 - INFO - 🔎 Esperando campo de usuario...
+2025-07-12 18:05:12 - INFO - ✅ Campo usuario encontrado
+2025-07-12 18:05:12 - INFO - ✅ Campo contraseña encontrado
+2025-07-12 18:05:12 - INFO - 🧾 Usuario ingresado
+2025-07-12 18:05:12 - INFO - 🧾 Contraseña ingresada
+2025-07-12 18:05:12 - INFO - ✅ Botón de ingreso encontrado
+2025-07-12 18:05:14 - INFO - 🚀 Formulario enviado
+2025-07-12 18:05:14 - INFO - ✅ Login exitoso

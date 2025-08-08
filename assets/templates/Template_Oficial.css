@@ -1,0 +1,190 @@
+@media print {
+  @page {
+    size: 8.5in 11in; /* Tamaño carta */
+    margin: 1in;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fc;
+  color: #111;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.letter-page {
+  width: 816px;   /* 8.5in × 96dpi */
+  height: 1056px; /* 11in × 96dpi */
+  margin: auto;
+  background: white;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.foto-personal {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#encabezado {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+#datos-encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#graficos {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.grafico {
+  width: 32%;
+  height: auto;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+#datos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.dato {
+  flex: 1;
+  text-align: center;
+}
+
+.dato h2 {
+  font-size: 1.5em;
+  color: #111;
+}
+
+.dato p {
+  font-size: 0.85em;
+  color: #555;
+}
+
+#top10-acta-milagrosa {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+#top10 {
+  flex: 1;
+}
+
+#top10 ol {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+#acta-milagrosa {
+  flex: 1;
+  text-align: center;
+}
+
+.acta-milagrosa {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+#historial-docente {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.historial-docente {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+#trabajo-final {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+#foto-nota-tf img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+#info-tf {
+  flex: 1;
+}
+
+.separador {
+  border-top: 1px solid #aaa;
+  margin: 10px 0;
+}

@@ -27,7 +27,7 @@ Así que, me puse manos a la obra a intentar hacer web scrapping usando la infor
 </p>
 
 **HTML a PDF**
-- Diseño de HTML creado en Webflow (webflow.com) y exportado.
+- Diseño del prototipo en HTML + CSS.
 - PENDIENTE: Automatización del proceso de actualización del html con los datos personalizados del usuario.
 - PENDIENTE: Tranformación de html final a pdf.
 

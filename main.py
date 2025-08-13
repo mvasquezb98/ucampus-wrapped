@@ -50,7 +50,6 @@ ucampus_selectors = {
 }
 success_check = ("id", "navigation-wrapper")
 
-#Login
 login_generic(driver, url_ucampus, USERNAME, PASSWORD, ucampus_selectors, success_check)
 
 try:

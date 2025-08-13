@@ -16,6 +16,8 @@ from export.excel_exporter import excel_exporter
 
 from core.ucursos import urls_cursos,extraer_datos_ucursos
 
+from core.limpieza_datos import limpiar_datos
+
 
 #Setup de los logs
 setup_logger()
@@ -81,3 +83,7 @@ driver.get(url)
 
 urls_cursos_alumno = urls_cursos(driver)
 extraer_datos_ucursos(driver,urls_cursos_alumno)
+# Cerrar el driver
+driver.quit()
+# Limpieza de datos
+limpiar_datos()

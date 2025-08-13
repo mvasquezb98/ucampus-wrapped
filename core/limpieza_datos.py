@@ -4,7 +4,6 @@
 import pandas as pd
 import numpy as np
 import os
-import re
 
 # CARGA DE DATOS
 base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

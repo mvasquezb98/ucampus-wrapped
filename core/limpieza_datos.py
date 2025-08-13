@@ -26,20 +26,19 @@ else:
 #dict_keys(['indicadores', 'notas', 'semestre', 'docencia', 'titulo', 'UB', 'UB_eliminadas', 'recuento'])
 #dict_keys(['Notas_ucursos', 'Actas_ucursos'])
 
-df_dict = ucursos_sheets_dict | ucampus_sheets_dict
-# Example: df_dict["indicadores"].head()
+try:
+    df_dict = ucursos_sheets_dict | ucampus_sheets_dict
+except NameError:
+    print("No se encontraron hojas de cálculo de UCAMPUS o UCURSOS.")
 
 ## LIMPIEZA RECUENTO DE CREDITOS
 df = df_dict["recuento"].copy()
-
 # 1) Eliminar filas con "candidatos" en columna Ramo (sea numérica o texto)
 df = df[~df["Ramo"].astype(str).str.contains(r"\bcandidatos\b", case=False, na=False)]
-
 # 2) Separar 'Unnamed: 1' por salto de línea, dejando: plan_name y count_str (ej. "Todo 3 de 3")
 parts = df["Unnamed: 1"].astype(str).str.split("\n", n=1, expand=True)
 df["plan_name"] = parts[0].str.strip()
 df["count_str"] = parts[1].str.strip()
-
 # 3) Extraer N desde la segunda parte (tomamos el número a la IZQUIERDA de "de")
 #    Ej: "10 de 10" -> N = 10
 df["N"] = (
@@ -49,12 +48,10 @@ df["N"] = (
       .fillna(0)
       .astype(int)
 )
-
 # 4) Construir la columna Plan repitiendo el nombre del plan N+1 veces
 Plan = []
 current = None
 remaining = 0
-
 for plan_name, N in df[["plan_name", "N"]].itertuples(index=False, name=None):
     # Si esta fila es cabecera (tiene patrón "N de N"), arranca un bloque nuevo
     if N > 0:
@@ -66,23 +63,17 @@ for plan_name, N in df[["plan_name", "N"]].itertuples(index=False, name=None):
         remaining -= 1
     else:
         Plan.append(np.nan)
-
 df["Plan"] = Plan
-
 # 5) Eliminar columna auxiliar
 df = df.drop(columns=["Unnamed: 1"])
-
 df_dict["recuento"] = df
-
 # 6) Subsets según Semestre
 subset_semestre_nan_ramo_int = df[df["Semestre"].isna() & df["Ramo"].str.isnumeric()].iloc[:, :-4].copy()
 subset_semestre_nan_ramo_int["Nota"] = subset_semestre_nan_ramo_int["Créditos"]
 subset_semestre_nan_ramo_int["Créditos"] = subset_semestre_nan_ramo_int["Ramo"].astype(int)
 subset_semestre_nan_ramo_int.drop(columns=["Ramo"], inplace=True)
-
 subset_semestre_nan_ramo_str = df[df["Semestre"].isna() & df["Ramo"].apply(lambda x: isinstance(x, str) and not x.isnumeric())].iloc[:, :-5].copy()
 subset_semestre_nan_ramo_str.columns = ["Plan", "Subplan", "Créditos"]
-
 subset_semestre_ok  = df[df["Semestre"].notna()].iloc[:, :-3].copy()
 subset_semestre_ok["Periodo"] = subset_semestre_ok["Semestre"]
 subset_semestre_ok["Año"] = subset_semestre_ok["Semestre"].str.extract(r"(\d{4})", expand=False).astype(int)
@@ -97,7 +88,6 @@ subset_semestre_ok["Nota"] = (
     #.astype("Int64")
 )
 subset_semestre_ok["Codigo_curso"] = subset_semestre_ok["Ramo"].apply(lambda x: x.split(" ")[0])
-
 df_dict["recuento_semestre_nan_ramo int"] = subset_semestre_nan_ramo_int
 df_dict["recuento_semestre_nan_ramo_str"] = subset_semestre_nan_ramo_str
 df_dict["recuento_semestre_ok"] = subset_semestre_ok    
@@ -157,10 +147,6 @@ Historial.columns = [col if not col.endswith(('_x')) else col[:-2] for col in Hi
 Historial["Créditos"] = pd.merge(Historial,df_dict["semestre"],on=["Codigo_curso","Periodo"])["Creditos"]
 UB = pd.concat([df_dict["UB"], df_dict["UB_eliminadas"]], ignore_index=True)
 Docencia = df_dict["docencia"].copy()
-
-with pd.ExcelWriter(os.path.join(data_path,"clean_data.xlsx"), engine="openpyxl") as writer:
-    for sheet_name, df in df_dict.items():
-        df.to_excel(writer, sheet_name=sheet_name, index=False)
 
 # -----------------------------
 salida = os.path.join(data_path,"tablas_finales.xlsx") 

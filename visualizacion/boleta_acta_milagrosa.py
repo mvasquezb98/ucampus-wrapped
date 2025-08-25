@@ -126,8 +126,8 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
     y = header_height
     padding = 20
     for _, row in df.iterrows():
-        course = row['Course Name']
-        grade = row['Grade']
+        course = row['Evaluación']
+        grade = row['Promedio']
         left_text = course[:30]
         right_text = f"{grade}"
 
@@ -147,7 +147,7 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
 
     # Text: "Average Grade:"
     exam_text = "Examen"
-    exam_value = df['Examen'].iloc[0]
+    exam_value = df[df['Evaluación']=='Examen']["Promedio"].iloc[0]
 
     # Draw text left-aligned
     draw.text((padding, line_y + 10), f"{exam_text}", font=font, fill='black')
@@ -162,7 +162,7 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
 
     # Text: "Average Grade:"
     avg_text = "Nota Final"
-    avg_value = df['Average Grade'].iloc[0]
+    avg_value = df[(df['Evaluación']=='Nota Final')|(df['Evaluación']=='Acta')]["Promedio"].iloc[0]
 
     # Draw text left-aligned
     draw.text((padding, line_y + 10), f"{avg_text}", font=font, fill='black')

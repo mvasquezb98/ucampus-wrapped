@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.common.exceptions import ElementClickInterceptedException
-
+import os
 import logging
 from config.logger import setup_logger
 setup_logger()
@@ -383,3 +383,16 @@ def extraer_datos_ucampus(driver):
   df_UB_eliminados = datos_UB_eliminados(driver)
   df_recuento = datos_recuento(driver)
   return(dict_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminados, df_recuento)
+
+def excel_exporter_ucampus(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento):
+    # Save to one Excel file
+    final_path = os.path.join(path,f"{file_name}.xlsx")
+    with pd.ExcelWriter(final_path, engine='xlsxwriter') as writer:
+        df_indicadores.to_excel(writer, sheet_name='indicadores', index=False)
+        df_cursos.to_excel(writer, sheet_name='notas', index=False)
+        df_semestre.to_excel(writer, sheet_name='semestre', index=False)
+        df_dictados.to_excel(writer, sheet_name='docencia', index=False)
+        df_examenes.to_excel(writer, sheet_name='titulo', index=False)
+        df_UB.to_excel(writer, sheet_name='UB', index=False)
+        df_UB_eliminadas.to_excel(writer, sheet_name='UB_eliminadas', index=False)
+        df_recuento.to_excel(writer, sheet_name='recuento', index=False)

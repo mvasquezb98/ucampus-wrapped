@@ -2,7 +2,7 @@
   "headless": true,
   "disable_gpu": false,
   "colab_mode": false,
-  "output_dir": "datos/output",
+  "output_dir": "data",
   "log_level": "INFO",
   "default_texture": "assets/textures/texture2.jpg",
   "export_excel": true

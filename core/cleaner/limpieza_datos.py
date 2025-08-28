@@ -4,15 +4,16 @@
 import pandas as pd
 import numpy as np
 import os
+from pathlib import Path
 
-def carga_datos():
-    # CARGA DE DATOS
-    base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    data_path = os.path.join(base_path,'datos', 'output')  
+
+def carga_datos(settings,base_path):
+    salida = Path(settings["output_dir"])
+    data_path = os.path.join(base_path,salida)
     if os.path.exists(data_path):
         for file in os.listdir(data_path):
             if file.endswith('.xlsx') and not file.startswith('~$'):
-                if 'ucursos' in file:
+                if 'ucursos' in file or 'UCURSOS' in file:
                     file_path = os.path.join(data_path, file)
                     ucursos_sheets_dict = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')
                 if 'ucampus' in file or 'UCAMPUS' in file:
@@ -22,10 +23,10 @@ def carga_datos():
         print(f"Directory '{data_path}' does not exist.")
     try:
         df_dict = ucursos_sheets_dict | ucampus_sheets_dict
-        return(df_dict,data_path)
+        return(df_dict)
     except NameError:
         print("No se encontraron hojas de cálculo de UCAMPUS o UCURSOS.")
-        return (None,data_path)
+        return (None)
 
 def limpiar_recuento(df_dict):
     ## LIMPIEZA RECUENTO DE CREDITOS
@@ -161,7 +162,9 @@ def creacion_tablas_finales(df_dict):
     Docencia = df_dict["docencia"].copy()
     return(Evaluaciones, Datos, Historial, UB, Docencia)
 
-def exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, data_path):
+def exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, settings,base_path):
+    salida = Path(settings["output_dir"])
+    data_path = os.path.join(base_path,salida)
     salida = os.path.join(data_path,"clean_data.xlsx") 
     tablas = {
         "Evaluaciones": Evaluaciones,
@@ -175,9 +178,9 @@ def exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, data_p
             sheet = nombre[:31]
             df.to_excel(writer, sheet_name=sheet, index=False)
 
-def limpiar_datos():
+def limpiar_datos(settings,base_path):
     ## LIMPIEZA DE DATOS                  
-    df_dict,data_path = carga_datos()
+    df_dict = carga_datos(settings,base_path)
     df_dict = limpiar_recuento(df_dict)
     df_dict = limpiar_actas_ucursos(df_dict)
     df_dict = limpiar_notas_ucursos(df_dict)
@@ -187,4 +190,4 @@ def limpiar_datos():
     df_dict = limpiar_docencia(df_dict)
     df_dict = limpiar_UB(df_dict)
     Evaluaciones, Datos, Historial, UB, Docencia = creacion_tablas_finales(df_dict)
-    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, data_path)
+    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, settings,base_path)

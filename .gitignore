@@ -1,6 +1,6 @@
 .venv
 .idea
-output
+data
 __pycache__/
 *.pyc
 *.pyo

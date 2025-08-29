@@ -9,12 +9,11 @@ from core.scrapper.navegador import get_chrome_driver
 import getpass
 
 from core.scrapper.auth import login_generic
-
-from core.scrapper.ucampus import extraer_datos_ucampus,excel_exporter_ucampus
-
-from core.scrapper.ucursos import urls_cursos,extraer_datos_ucursos,excel_exporter_ucursos
-
+from core.scrapper.ucampus import extraer_datos_ucampus
+from core.scrapper.ucursos import urls_cursos,extraer_datos_ucursos
+from core.scrapper.excel_exporter import excel_exporter
 from core.cleaner.limpieza_datos import limpiar_datos
+
 import os
 
 #Setup de los logs
@@ -56,13 +55,13 @@ def scrapper(settings,base_path):
     login_generic(driver, url_ucampus, USERNAME, PASSWORD, ucampus_selectors, success_check)
 
     try:
-        df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento = extraer_datos_ucampus(driver)
+        df_dict_ucampus = extraer_datos_ucampus(driver)
     except Exception as e:
         log.exception("Error during scraping")
 
     try:
         file_name = f"data_UCAMPUS_{rut}" 
-        excel_exporter_ucampus(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento)
+        excel_exporter(file_name, path, df_dict_ucampus)
     except:
         log.exception("Error during export")
 
@@ -82,10 +81,10 @@ def scrapper(settings,base_path):
     driver.get(url)
 
     urls_cursos_alumno = urls_cursos(driver)
-    df_notas,df_actas = extraer_datos_ucursos(driver,urls_cursos_alumno)
+    df_dict_ucursos = extraer_datos_ucursos(driver,urls_cursos_alumno)
 
     file_name = f"data_UCURSOS_{rut}" 
-    excel_exporter_ucursos(file_name,path,df_notas, df_actas)
+    excel_exporter(file_name,path,df_dict_ucursos)
 
     # Cerrar el driver
     driver.quit()

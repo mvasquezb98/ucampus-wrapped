@@ -97,11 +97,15 @@ def extraer_datos_ucursos(driver,urls_cursos_alumno):
   # Convertir a DataFrames
   df_notas = pd.DataFrame(notas_data)
   df_actas = pd.DataFrame(acta_data)  
-  return(df_notas,df_actas)
-def excel_exporter_ucursos(file_name,path,df_notas, df_actas):
-    # Guardar en Excel con varias hojas
-    salida = os.path.join(path,f"{file_name}.xlsx")
-    with pd.ExcelWriter(salida, engine="openpyxl") as writer:
-        df_notas.to_excel(writer, sheet_name="Notas_ucursos", index=False)
-        df_actas.to_excel(writer, sheet_name="Actas_ucursos", index=False)
-    print("✅ Datos exportados correctamente a "+f"{file_name}.xlsx")
+  df_dict = {
+      "Notas_ucursos": df_notas,
+      "Actas_ucursos": df_actas
+  }
+  return(df_dict)
+# def excel_exporter_ucursos(file_name,path,df_notas, df_actas):
+#     # Guardar en Excel con varias hojas
+#     salida = os.path.join(path,f"{file_name}.xlsx")
+#     with pd.ExcelWriter(salida, engine="openpyxl") as writer:
+#         df_notas.to_excel(writer, sheet_name="Notas_ucursos", index=False)
+#         df_actas.to_excel(writer, sheet_name="Actas_ucursos", index=False)
+#     print("✅ Datos exportados correctamente a "+f"{file_name}.xlsx")

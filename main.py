@@ -1,19 +1,14 @@
 import logging
 from config.logger import setup_logger
-
 import json
 from pathlib import Path
-
-from core.scrapper.navegador import get_chrome_driver
-
 import getpass
-
+from core.scrapper.navegador import get_chrome_driver
 from core.scrapper.auth import login_generic
 from core.scrapper.ucampus import extraer_datos_ucampus
 from core.scrapper.ucursos import urls_cursos,extraer_datos_ucursos
 from core.scrapper.excel_exporter import excel_exporter
 from core.cleaner.limpieza_datos import limpiar_datos
-
 import os
 
 #Setup de los logs

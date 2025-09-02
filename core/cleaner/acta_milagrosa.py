@@ -1,8 +1,15 @@
 import pandas as pd
 import numpy as np
 import os
+import unicodedata
+import logging
+from config.logger import setup_logger
 
-def load_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones'):
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
+
+def load_data(file_name, sheet_name):
     """
     Load the Acta Milagrosa data from a CSV file.
 
@@ -17,12 +24,11 @@ def load_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones'):
     
     try:
         data = pd.read_excel(file_path, sheet_name)
+        logger.info(f"✅ Datos cargados para identificar Acta Milagrosa ({file_name} - Sheet: {sheet_name}). ")
         return data
     except Exception as e:
-        print(f"Error loading data: {e}")
-        return None
-
-import unicodedata
+        logger.exception(f"❌ Error cargando los datos: {e}")
+        return pd.DataFrame()
 
 def limpiar_texto(s):
     # Pasar a mayúsculas
@@ -41,15 +47,15 @@ def limpiar_texto(s):
     return s
 
     
-def get_acta_milagrosa_data(df):
+def get_acta_milagrosa_data():
     """
     Retrieve the Acta Milagrosa data.
 
     Returns:
     pd.DataFrame: A DataFrame containing the Acta Milagrosa data.
     """
-    df_evaluaciones = load_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
-    df_historial = load_data(file_name='clean_data.xlsx', sheet_name='Historial')
+    logger.info("ℹ️️ Inicio identificación del Acta Milagrosa.")
+    
     lista_examen = [
         "Examen",
         "Examen 2 no presencial",
@@ -101,8 +107,10 @@ def get_acta_milagrosa_data(df):
         r"|PRE[- ]?EXAMEN"
         r")$"
     )
-    
-    if df_evaluaciones is not None and df_historial is not None:
+    logger.info("ℹ️️ Inicio limpieza para el Acta Milagrosa.")
+    try:
+        df_evaluaciones = load_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
+        df_historial = load_data(file_name='clean_data.xlsx', sheet_name='Historial')
         df_evaluaciones.dropna(subset=["Promedio"],inplace=True)
         df_examen = df_evaluaciones.copy()
         df_examen.rename(columns={"Promedio": "Nota"}, inplace=True)
@@ -131,13 +139,14 @@ def get_acta_milagrosa_data(df):
                     df_examen.groupby("Codigo_curso")["Evaluación"].apply(lambda x: x.str.len().idxmin())
                 ]
             )
-            print("There are multiple exam entries for the same course. Please check the data.")
+            logger.info("⚠️ There are multiple exam entries for the same course. Please check the data.")
         df_historial.rename(columns={"Promedio": "Promedio Curso", "Nota Final": "Promedio"}, inplace=True)
         cursos_aprobados = df_historial[(~df_historial["Promedio"].isin(["R","T","E"]))]["Codigo_curso"].unique()         
         notas_examen = df_examen[df_examen["Codigo_curso"].isin(cursos_aprobados)]
         notas_actas = df_historial[(df_historial["Codigo_curso"].isin(df_examen["Codigo_curso"])) & (~df_historial["Promedio"].isin(["R","T","E"]))]#["Promedio"].astype(float).reset_index(drop=True)
         
         df_final = pd.merge(notas_examen, notas_actas, on=["Curso URL","Codigo_curso","Año","Semestre"], how="left")        
+        
         m = 0.4
         df_final["Nota Presentacion estimada"] = (df_final["Promedio"].astype(float) - m * df_final["Nota"].astype(float))/(1-m)
         df_final = pd.merge(df_final,df_nota_presentacion, on=["Curso URL","Codigo_curso","Año","Semestre"],how="left")
@@ -154,21 +163,25 @@ def get_acta_milagrosa_data(df):
         df_final["Nota Presentacion estimada"]  = df_final["Nota Presentacion estimada"].round(2)
         df_final.sort_values(by=["Promedio","Nota Presentacion estimada"], ascending=[True,True], inplace=True)
         
-        curso_acta_milagrosa = df_final[df_final["Nota Presentacion estimada"] == df_final["Nota Presentacion estimada"].min()]["Codigo_curso"].tolist()
-        curso_acta_milagrosa = curso_acta_milagrosa[0]
-        df_acta_milagrosa = df_evaluaciones[df_evaluaciones["Codigo_curso"] == curso_acta_milagrosa]        
-        
-        row_acta = df_historial[df_historial["Codigo_curso"] == curso_acta_milagrosa]
-        row_acta["Evaluación"] = "Acta"
-        row_acta = row_acta[["Curso URL","Evaluación","Promedio","Codigo_curso","Año", "Semestre","Periodo"]]
-        row_acta.reindex(columns=df_acta_milagrosa.columns)
-        
-        df_acta_milagrosa = pd.concat([df_acta_milagrosa, row_acta], ignore_index=True)
-
-        return(df_final,df_nota_presentacion,notas_examen,df_acta_milagrosa)
-    else:
-        raise ValueError("Failed to find Acta Milagrosa.")
-
-
-
-
+        try:    
+            logger.info("ℹ️️ Identificando Acta Milagrosa...")
+            curso_acta_milagrosa = df_final[df_final["Nota Presentacion estimada"] == df_final["Nota Presentacion estimada"].min()]["Codigo_curso"].tolist()
+            curso_acta_milagrosa = curso_acta_milagrosa[0]
+            df_acta_milagrosa = df_evaluaciones[df_evaluaciones["Codigo_curso"] == curso_acta_milagrosa]        
+            
+            row_acta = df_historial[df_historial["Codigo_curso"] == curso_acta_milagrosa]
+            row_acta["Evaluación"] = "Acta"
+            row_acta = row_acta[["Curso URL","Evaluación","Promedio","Codigo_curso","Año", "Semestre","Periodo"]]
+            row_acta.reindex(columns=df_acta_milagrosa.columns)
+            
+            df_acta_milagrosa = pd.concat([df_acta_milagrosa, row_acta], ignore_index=True)
+            logger.info("✅ Acta Milagrosa identificada.")
+            # df_final:
+            # df_nota_presentacion:
+            # notas_examen: 
+            # df_acta_milagrosa: 
+            return(df_final,df_nota_presentacion,notas_examen,df_acta_milagrosa)
+        except Exception as e:
+            logger.exception(f"❌ Error identificando Acta Milagrosa: {e}.")
+    except Exception as e:
+         logger.exception(f"❌ Error en la limpieza para el Acta Milagrosa: {e}.")

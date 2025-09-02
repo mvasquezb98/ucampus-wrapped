@@ -1,6 +1,13 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import pandas as pd
+import logging
+from config.logger import setup_logger
+import os
+
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 # Input data
 data = {
@@ -14,7 +21,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
-def plot_timeline(df):
+def plot_timeline(df,save_path):
     # Group descriptions by year
     grouped = df.groupby("year")["desc"].apply(list).reset_index()
     grouped = grouped.sort_values("year")
@@ -52,4 +59,7 @@ def plot_timeline(df):
     ax.arrow(len(grouped) - 0.5 + 0.6, 4, 0.2, 0, head_width=0.05, head_length=0.2, fc='black', ec='black')
 
     plt.tight_layout()
-    plt.show()
+    
+    # 💾 Save the figure
+    img_path = os.path.join(save_path, "radar_plot.svg")
+    fig.savefig(img_path, dpi=300, bbox_inches="tight")

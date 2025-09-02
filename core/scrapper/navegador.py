@@ -1,26 +1,31 @@
-# Solo en GoogleColab
-# chrome_options.add_argument('--no-sandbox') # Para desactivar el sandbox de seguridad de Chrome, porque da errores al intentar crearlo en entornos limitados.
-# chrome_options.add_argument('--disable-dev-shm-usage') # Para que chrome use el disco normal en vez de la memoria compartida de la carpeta /dev/shm que es limitada y se puede caer.
-# chrome_options.add_argument('--disable-gpu') #  Le dice a Chrome que no intente usar la tarjeta gráfica (GPU) para renderizar páginas.
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import logging
+from config.logger import setup_logger
+
+setup_logger()
+logger = logging.getLogger(__name__)
 
 def get_chrome_driver(headless=True, disable_gpu=True, colab_mode=False):
-    chrome_options = Options()
-    
-    if headless:
-        chrome_options.add_argument('--headless')
-    if disable_gpu:
-        chrome_options.add_argument('--disable-gpu')
-    if colab_mode:
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
+    try:
+        chrome_options = Options()
+        
+        if headless:
+            chrome_options.add_argument('--headless')
+        if disable_gpu:
+            chrome_options.add_argument('--disable-gpu')
+        if colab_mode:
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
 
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=chrome_options
-    )
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=chrome_options
+        )
+        logger.info("✅ Chrome driver initialized.")
+    except Exception as e:
+        logger.exception("❌ Failed to initialize Chrome driver.")
+        raise e
     return driver

@@ -1,7 +1,12 @@
 import pandas as pd
 from selenium.webdriver.common.by import By
 import time
-import os
+import logging
+from config.logger import setup_logger
+
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌
 
 def urls_cursos(driver):
     urls_cursos_alumno = []
@@ -24,84 +29,90 @@ def urls_cursos(driver):
             continue  # Si no hay div.cargo.cargo-alumno, lo ignora
     return(urls_cursos_alumno)
 
-def extraer_datos_ucursos(driver,urls_cursos_alumno):
-  notas_data = []
-  acta_data = []
+def data_notas(driver,urls_cursos_alumno):
+    notas_data = []
+    for curso_url in urls_cursos_alumno:
+        link_notas = curso_url + 'notas/alumno'
+        try:
+            driver.get(link_notas)
+            time.sleep(2)
 
-  for curso_url in urls_cursos_alumno:
-      link_notas = curso_url + 'notas/alumno'
-      link_acta = curso_url + 'actas/'
+            # Encuentra la tabla correcta
+            tables = driver.find_elements(By.TAG_NAME, "table")
+            target_table = next(
+                (table for table in tables
+                if "Evaluación" in [th.text.strip() for th in table.find_elements(By.TAG_NAME, "th")]
+                and any("Prom" in th.text.strip() for th in table.find_elements(By.TAG_NAME, "th"))),
+                None
+            )
 
-      #### NOTAS ####
-      try:
-          driver.get(link_notas)
-          time.sleep(2)
+            if target_table:
+                rows = target_table.find_elements(By.XPATH, ".//tbody/tr[not(contains(@class, 'separador'))]")
+                for row in rows:
+                    try:
+                        cols = row.find_elements(By.TAG_NAME, "td")
+                        evaluacion = cols[0].find_element(By.TAG_NAME, "h1").text.strip()
+                        promedio = cols[-1].find_element(By.TAG_NAME, "span").text.strip()
+                        notas_data.append({
+                            "Curso URL": curso_url,
+                            "Evaluación": evaluacion,
+                            "Promedio": promedio
+                        })
+                        
+                    except Exception as e:
+                        logger.exception(f"⚠️ Could not extract row: {e}")
+            else:
+                logger.info(f"⚠️ Tabla de notas no encontrada en {link_notas}")
+        
+        except Exception as e:
+            logger.exception(f"❌ Error cargando página de notas: {e}")
+    return(pd.DataFrame(notas_data))
 
-          # Encuentra la tabla correcta
-          tables = driver.find_elements(By.TAG_NAME, "table")
-          target_table = next(
-              (table for table in tables
-              if "Evaluación" in [th.text.strip() for th in table.find_elements(By.TAG_NAME, "th")]
-              and any("Prom" in th.text.strip() for th in table.find_elements(By.TAG_NAME, "th"))),
-              None
-          )
+def data_actas(driver,urls_cursos_alumno):
+    acta_data = []
+    for curso_url in urls_cursos_alumno:
+        link_acta = curso_url + 'actas/'
+        try:
+            driver.get(link_acta)
+            time.sleep(2)
 
-          if target_table:
-              rows = target_table.find_elements(By.XPATH, ".//tbody/tr[not(contains(@class, 'separador'))]")
-              for row in rows:
-                  try:
-                    cols = row.find_elements(By.TAG_NAME, "td")
-                    evaluacion = cols[0].find_element(By.TAG_NAME, "h1").text.strip()
-                    promedio = cols[-1].find_element(By.TAG_NAME, "span").text.strip()
-                    notas_data.append({
+            table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+            rows = table.find_elements(By.TAG_NAME, "tr")
+
+            for row in rows:
+                try:
+                    cols = row.find_elements(By.TAG_NAME, "th") + row.find_elements(By.TAG_NAME, "td")
+                    if len(cols) == 1:
+                        label = cols[0].text.strip()
+                        value = ""
+                    elif len(cols) >= 2:
+                        label = cols[0].text.strip()
+                        value = cols[1].text.strip()
+                    else:
+                        continue
+                    acta_data.append({
                         "Curso URL": curso_url,
-                        "Evaluación": evaluacion,
-                        "Promedio": promedio
+                        "Indicador": label,
+                        "Valor": value
                     })
-                  except Exception as e:
-                    print(f"⚠️ Could not extract row: {e}")
-          else:
-              print(f"⚠️ Tabla de notas no encontrada en {link_notas}")
-      except Exception as e:
-          print(f"❌ Error cargando página de notas: {e}")
+                except Exception as e:
+                    logger.exception(f"⚠️ Error parsing row in acta: {e}")
+        except Exception as e:
+            logger.exception(f"❌ Error cargando página de acta: {e}")
+    return(pd.DataFrame(acta_data))        
+    
+def extraer_datos_ucursos(driver,urls_cursos_alumno):
+    
+    df_notas = data_notas(driver,urls_cursos_alumno)
+    df_actas = data_actas(driver,urls_cursos_alumno)
 
-      #### ACTA ####
-      try:
-          driver.get(link_acta)
-          time.sleep(2)
+    df_dict = {
+        "Notas_ucursos": df_notas,
+        "Actas_ucursos": df_actas
+    }
+    
+    return(df_dict)
 
-          table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
-          rows = table.find_elements(By.TAG_NAME, "tr")
-
-          for row in rows:
-              try:
-                  cols = row.find_elements(By.TAG_NAME, "th") + row.find_elements(By.TAG_NAME, "td")
-                  if len(cols) == 1:
-                      label = cols[0].text.strip()
-                      value = ""
-                  elif len(cols) >= 2:
-                      label = cols[0].text.strip()
-                      value = cols[1].text.strip()
-                  else:
-                      continue
-                  acta_data.append({
-                      "Curso URL": curso_url,
-                      "Indicador": label,
-                      "Valor": value
-                  })
-              except Exception as e:
-                  print(f"⚠️ Error parsing row in acta: {e}")
-      except Exception as e:
-          print(f"❌ Error cargando página de acta: {e}")
-
-  # Convertir a DataFrames
-  df_notas = pd.DataFrame(notas_data)
-  df_actas = pd.DataFrame(acta_data)  
-  df_dict = {
-      "Notas_ucursos": df_notas,
-      "Actas_ucursos": df_actas
-  }
-  return(df_dict)
 # def excel_exporter_ucursos(file_name,path,df_notas, df_actas):
 #     # Guardar en Excel con varias hojas
 #     salida = os.path.join(path,f"{file_name}.xlsx")

@@ -3,8 +3,12 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import logging
+from config.logger import setup_logger
 
+setup_logger() 
 logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 def login_generic(driver, url, username, password, selectors, success_check):
     try:

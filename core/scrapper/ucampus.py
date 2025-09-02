@@ -1,15 +1,17 @@
 import pandas as pd
-from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.common.exceptions import ElementClickInterceptedException
-import os
+
 import logging
 from config.logger import setup_logger
-setup_logger()
-log = logging.getLogger(__name__)
+
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 def datos_indicadores(driver):
   indicadores= {}
@@ -22,17 +24,17 @@ def datos_indicadores(driver):
       for dt, dd in zip(dt_tags, dd_tags):
           indicadores[dt.text.strip()] = dd.text.strip()
       indicadores['id_indicador'] = 1
-      print("Carga Exitosa: Indicadores")
+      logger.info("✅ Carga Exitosa: Indicadores")
       df_indicadores = pd.DataFrame(indicadores.items(), columns=["Indicador", "Valor"])
       return(df_indicadores)
   except Exception:
-      print("❌ Error al cargar Indicadores del Estudiante")
+      logger.exception("❌ Error al cargar Indicadores del Estudiante")
 
 def datos_resumen(driver):
   try:
     # Forzar visibilidad si está oculto por CSS
     driver.execute_script("document.getElementById('resumen').style.display = 'block';")
-    print("✅ Div 'resumen' visible. Extrayendo tabla...")
+    logger.info("✅ Div 'resumen' visible. Extrayendo tabla...")
     resumen = driver.find_element(By.ID,"resumen")
     tabla = resumen.find_element(By.TAG_NAME, "table")
     filas = tabla.find_elements(By.TAG_NAME, "tr")
@@ -77,14 +79,14 @@ def datos_resumen(driver):
                 "Creditos": ramo["Créditos"],
                 "Nota": ramo["Nota"]
             })
-    print(f"✅ Extraídas {len(datos)} filas.")
+    logger.info(f"✅ Extraídas {len(datos)} filas.")
 
     df_cursos = pd.DataFrame(filas)
     df_semestre = pd.DataFrame(datos)
-    print("Carga Exitosa: Resumen notas")
+    logger.info("✅ Carga Exitosa: Resumen notas")
     return(df_semestre,df_cursos)
   except Exception:
-    print("❌ Error al cargar resumen")
+    logger.exception("❌ Error al cargar resumen")
 
 def datos_labores_docentes(driver):
   try:
@@ -148,10 +150,10 @@ def datos_labores_docentes(driver):
     # Optional: Reorder columns for better readability
     df_dictados = df_dictados[["Año", "Semestre", "Nombre", "Código", "Cargo"]]
     df_dictados.dropna(inplace=True)
-    print("Carga Exitosa: Labores docentes")
+    logger.info("✅ Carga Exitosa: Labores docentes")
     return(df_dictados)
   except Exception:
-    print("❌ Error al cargar labores docentes")
+    logger.exception("❌ Error al cargar labores docentes")
 
 def datos_examenes_y_titulo(driver):
   try:
@@ -179,22 +181,15 @@ def datos_examenes_y_titulo(driver):
 
     # Convertir a DataFrame
     df_examenes = pd.DataFrame(datos)
-    print("Carga Exitosa: Exámenes de Grado y/o Título")
+    logger.info("✅ Carga Exitosa: Exámenes de Grado y/o Título")
     return(df_examenes)
   except Exception:
-    print("❌ Error al cargar Exámenes de Grado y/o Título")
+    logger.exception("❌ Error al cargar Exámenes de Grado y/o Título")
 
 def datos_UB(driver):
-    from selenium.common.exceptions import ElementClickInterceptedException
-    import pandas as pd
-    import time
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-
     url = "https://ucampus.uchile.cl/m/fcfm_unidades_becarias/becas_alumno"
     try:
-        log.info("🔁 Navegando a página de Unidades Becarias...")
+        logger.info("🔁 Navegando a página de Unidades Becarias...")
         wait = WebDriverWait(driver, 10)
         driver.get(url)
 
@@ -205,13 +200,13 @@ def datos_UB(driver):
         year_values = [opt.get_attribute("value") for opt in year_select.find_elements(By.TAG_NAME, "option")]
 
         for year_value in year_values:
-            log.info(f"📆 Extrayendo datos del año {year_value}...")
+            logger.info(f"📆 Extrayendo datos del año {year_value}...")
 
             try:
                 dropdown = wait.until(EC.element_to_be_clickable((By.ID, "ano_chosen")))
                 dropdown.click()
             except ElementClickInterceptedException:
-                log.warning("⚠️ Dropdown interceptado, usando JavaScript click.")
+                logger.warning("⚠️ Dropdown interceptado, usando JavaScript click.")
                 dropdown = driver.find_element(By.ID, "ano_chosen")
                 driver.execute_script("arguments[0].click();", dropdown)
 
@@ -221,13 +216,13 @@ def datos_UB(driver):
             year_option = next((li for li in year_options if li.text.strip() == year_value), None)
 
             if not year_option:
-                log.warning(f"⚠️ No se encontró la opción para el año {year_value}.")
+                logger.warning(f"⚠️ No se encontró la opción para el año {year_value}.")
                 continue
 
             try:
                 year_option.click()
             except ElementClickInterceptedException:
-                log.warning("⚠️ Año interceptado, usando JavaScript click.")
+                logger.warning("⚠️ Año interceptado, usando JavaScript click.")
                 driver.execute_script("arguments[0].click();", year_option)
 
             time.sleep(1.5)
@@ -252,7 +247,7 @@ def datos_UB(driver):
         return df_final
 
     except Exception as e:
-        log.exception(f"❌ Error general al navegar en Unidades Becarias: {e}")
+        logger.exception(f"❌ Error general al navegar en Unidades Becarias: {e}")
         return pd.DataFrame()
 
 
@@ -267,7 +262,7 @@ def datos_UB_eliminados(driver):
 
     url = "https://ucampus.uchile.cl/m/fcfm_unidades_becarias/becas_alumno"
     try:
-        log.info("🔁 Navegando a página de Unidades Becarias...")
+        logger.info("🔁 Navegando a página de Unidades Becarias...")
         wait = WebDriverWait(driver, 10)
         driver.get(url)
 
@@ -278,13 +273,13 @@ def datos_UB_eliminados(driver):
         year_values = [opt.get_attribute("value") for opt in year_select.find_elements(By.TAG_NAME, "option")]
 
         for year_value in year_values:
-            log.info(f"📆 Extrayendo datos del año {year_value}...")
+            logger.info(f"📆 Extrayendo datos del año {year_value}...")
 
             try:
                 dropdown = wait.until(EC.element_to_be_clickable((By.ID, "ano_chosen")))
                 dropdown.click()
             except ElementClickInterceptedException:
-                log.warning("⚠️ Dropdown interceptado, usando JavaScript click.")
+                logger.warning("⚠️ Dropdown interceptado, usando JavaScript click.")
                 dropdown = driver.find_element(By.ID, "ano_chosen")
                 driver.execute_script("arguments[0].click();", dropdown)
 
@@ -294,13 +289,13 @@ def datos_UB_eliminados(driver):
             year_option = next((li for li in year_options if li.text.strip() == year_value), None)
 
             if not year_option:
-                log.warning(f"⚠️ No se encontró la opción para el año {year_value}.")
+                logger.warning(f"⚠️ No se encontró la opción para el año {year_value}.")
                 continue
 
             try:
                 year_option.click()
             except ElementClickInterceptedException:
-                log.warning("⚠️ Año interceptado, usando JavaScript click.")
+                logger.warning("⚠️ Año interceptado, usando JavaScript click.")
                 driver.execute_script("arguments[0].click();", year_option)
 
             time.sleep(1.5)
@@ -311,7 +306,7 @@ def datos_UB_eliminados(driver):
                 ))
                 table = h2.find_element(By.XPATH, "following-sibling::table[1]")
             except (TimeoutException, NoSuchElementException):
-                log.warning(f"⚠️ No hay tabla de UBs Eliminadas para el año {year_value}.")
+                logger.warning(f"⚠️ No hay tabla de UBs Eliminadas para el año {year_value}.")
                 continue
 
             headers = [th.text.strip() for th in table.find_elements(By.TAG_NAME, "th")]
@@ -331,12 +326,12 @@ def datos_UB_eliminados(driver):
         return df_final
 
     except Exception as e:
-        log.exception(f"❌ Error general al navegar en Unidades Becarias: {e}")
+        logger.exception(f"❌ Error general al navegar en Unidades Becarias: {e}")
         return pd.DataFrame()
 
 def datos_recuento(driver):
     url = "https://ucampus.uchile.cl/m/fcfm_bia/recuento_uds"
-    print("🔁 Navegando a página de Recuento de UDs...")
+    logger.info("🔁 Navegando a página de Recuento de UDs...")
 
     try:
         driver.get(url)
@@ -363,36 +358,41 @@ def datos_recuento(driver):
                     datos.append([plan] + columnas)
 
         if not datos:
-            print("⚠️ No se encontraron datos en la tabla.")
+            logger.info("⚠️ No se encontraron datos en la tabla.")
             return pd.DataFrame()
 
         df = pd.DataFrame(datos, columns=encabezados)
-        print("✅ Datos de recuento extraídos correctamente.")
+        logger.info("✅ Datos de recuento extraídos correctamente.")
         return df
 
     except Exception as e:
-        print(f"❌ Error al obtener el recuento de UDs: {e}")
+        logger.exception(f"❌ Error al obtener el recuento de UDs: {e}")
         return pd.DataFrame()
 
 def extraer_datos_ucampus(driver):
-  dict_indicadores = datos_indicadores(driver)
-  df_cursos, df_semestre = datos_resumen(driver) # type: ignore
-  df_dictados = datos_labores_docentes(driver)
-  df_examenes = datos_examenes_y_titulo(driver)
-  df_UB = datos_UB(driver)
-  df_UB_eliminados = datos_UB_eliminados(driver)
-  df_recuento = datos_recuento(driver)
-  df_dict={
-      "indicadores": dict_indicadores,
-      "notas": df_cursos,
-      "semestre": df_semestre,
-      "docencia": df_dictados,
-      "titulo": df_examenes,
-      "UB": df_UB,
-      "UB_eliminadas": df_UB_eliminados,
-      "recuento": df_recuento
-  }
-  return(df_dict)
+    try:
+        dict_indicadores = datos_indicadores(driver)
+        df_cursos, df_semestre = datos_resumen(driver) # type: ignore
+        df_dictados = datos_labores_docentes(driver)
+        df_examenes = datos_examenes_y_titulo(driver)
+        df_UB = datos_UB(driver)
+        df_UB_eliminados = datos_UB_eliminados(driver)
+        df_recuento = datos_recuento(driver)
+        df_dict={
+            "indicadores": dict_indicadores,
+            "notas": df_cursos,
+            "semestre": df_semestre,
+            "docencia": df_dictados,
+            "titulo": df_examenes,
+            "UB": df_UB,
+            "UB_eliminadas": df_UB_eliminados,
+            "recuento": df_recuento
+        }
+        logger.info("✅ Extracción de datos de ucampus completada.")
+        return(df_dict)
+    except Exception as e:
+        logger.exception(f"❌ Error al extraer datos de ucampus: {e}")
+        return {}
 
 
 # def excel_exporter_ucampus(file_name,path,df_indicadores, df_cursos, df_semestre, df_dictados, df_examenes, df_UB, df_UB_eliminadas, df_recuento):

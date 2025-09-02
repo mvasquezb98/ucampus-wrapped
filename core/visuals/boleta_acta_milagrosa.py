@@ -1,7 +1,13 @@
-import pandas as pd
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import barcode
 from barcode.writer import ImageWriter
+from typing import Union, Tuple
+import logging
+from config.logger import setup_logger
+
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 # Create barcode from string
 def generate_barcode(data: str, filename: str = "barcode.png"):
@@ -29,9 +35,19 @@ def generate_barcode(data: str, filename: str = "barcode.png"):
     return full_path
 
 # Draw soft blur shadow text
-def draw_soft_shadow_text(base_img, position, text, font,
-                          text_color="black", shadow_color="black",
-                          shadow_offset=(2, 2), blur_radius=2):
+# def draw_soft_shadow_text(base_img, position, text, font,
+#                           text_color="black", shadow_color="black",
+#                           shadow_offset=(2, 2), blur_radius=2):
+def draw_soft_shadow_text(
+    base_img,
+    position,
+    text,
+    font,
+    text_color: Union[str, Tuple[int, int, int], Tuple[int, int, int, int]] = "black",
+    shadow_color: Union[str, int, Tuple[int, int, int], Tuple[int, int, int, int]] = "black",
+    shadow_offset: Tuple[int, int] = (2, 2),
+    blur_radius = 2
+):
     x, y = position
     shadow_layer = Image.new("RGBA", base_img.size, (255, 255, 255, 0))
     shadow_draw = ImageDraw.Draw(shadow_layer)
@@ -87,7 +103,8 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
     except:
         font = ImageFont.load_default()
         bold_font = font  # fallback if bold font not found
-
+        logger.exception("⚠️ fallback to default fonts. Custom fonts not found in assets.")
+    
     # Example placeholder (replace this with your actual value from df or a separate variable)
     title_line1 = "Acta Milagrosa"
     title_line2 = "MA1002 - Introducción al Álgebra"
@@ -140,33 +157,37 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
         draw.text((width - right_w - padding, y), right_text, font=font, fill=grade_color)
 
         y += row_height
-
+    
     # Draw thin line
     line_y = y + 10
     draw.line([(padding, y), (width - padding, y)], fill=(100, 100, 100), width=1)
 
-    # Text: "Average Grade:"
     exam_text = "Examen"
-    exam_value = df[df['Evaluación']=='Examen']["Promedio"].iloc[0]
+    exam_series = df.loc[df['Evaluación'] == 'Examen', 'Promedio']
+    exam_value = exam_series.iloc[0] if not exam_series.empty else ""
 
     # Draw text left-aligned
     draw.text((padding, line_y + 10), f"{exam_text}", font=font, fill='black')
-    draw.text((width - right_w - padding, line_y + 10), f"{exam_value}", font=bold_font, fill='black') #padding + 140
+    bbox = draw.textbbox((0, 0), f"{exam_value}", font=bold_font)
+    exam_w = bbox[2] - bbox[0]
+    draw.text((width - exam_w - padding, line_y + 10), f"{exam_value}", font=bold_font, fill='black') #padding + 140
 
     y = line_y  # update y
-
 
     # Draw thin line
     line_y = y + 10
     draw.line([(padding, y), (width - padding, y)], fill=(100, 100, 100), width=1)
 
-    # Text: "Average Grade:"
+
     avg_text = "Nota Final"
-    avg_value = df[(df['Evaluación']=='Nota Final')|(df['Evaluación']=='Acta')]["Promedio"].iloc[0]
+    avg_series = df.loc[(df['Evaluación']=='Nota Final')|(df['Evaluación']=='Acta'), 'Promedio']
+    avg_value = avg_series.iloc[0] if not avg_series.empty else ""
 
     # Draw text left-aligned
     draw.text((padding, line_y + 10), f"{avg_text}", font=font, fill='black')
-    draw.text((width - right_w - padding, line_y + 10), f"{avg_value}", font=bold_font, fill='black') #padding + 140
+    bbox = draw.textbbox((0, 0), f"{avg_value}", font=bold_font)
+    avg_w = bbox[2] - bbox[0]
+    draw.text((width - avg_w - padding, line_y + 10), f"{avg_value}", font=bold_font, fill='black') #padding + 140
 
     y = line_y  # update y for barcode position below
 
@@ -175,4 +196,4 @@ def create_receipt_with_shadow_and_barcode(df, texture_path="texture2.jpg", barc
     add_barcode_to_receipt(img, barcode_path, position=(50, y + 50))
 
     img.convert("RGB").save(output_path)
-    print(f"✅ Receipt saved at {output_path}")
+    logger.info(f"💾 Receipt saved at {output_path}")

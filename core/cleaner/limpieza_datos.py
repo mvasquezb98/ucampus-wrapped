@@ -1,32 +1,33 @@
-#datos_ucursos.xlsx
-#data_UCAMPUS_19842174K.xlsx
-
 import pandas as pd
 import numpy as np
 import os
 from pathlib import Path
+import logging
+from config.logger import setup_logger
+
+setup_logger() 
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 
 def carga_datos(settings,base_path):
     salida = Path(settings["output_dir"])
     data_path = os.path.join(base_path,salida)
+    ucursos_sheets_df = pd.DataFrame()
+    ucampus_sheets_df = pd.DataFrame() 
     if os.path.exists(data_path):
         for file in os.listdir(data_path):
             if file.endswith('.xlsx') and not file.startswith('~$'):
+                file_path = os.path.join(data_path, file)
                 if 'ucursos' in file or 'UCURSOS' in file:
-                    file_path = os.path.join(data_path, file)
-                    ucursos_sheets_dict = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')
+                    ucursos_sheets_df = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')                
                 if 'ucampus' in file or 'UCAMPUS' in file:
-                    file_path = os.path.join(data_path, file)
-                    ucampus_sheets_dict = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')
+                    ucampus_sheets_df = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')
     else:
-        print(f"Directory '{data_path}' does not exist.")
-    try:
-        df_dict = ucursos_sheets_dict | ucampus_sheets_dict
-        return(df_dict)
-    except NameError:
-        print("No se encontraron hojas de cálculo de UCAMPUS o UCURSOS.")
-        return (None)
+        logger.info(f"⚠️ Directory '{data_path}' does not exist.")
+
+    df_dict = ucursos_sheets_df | ucampus_sheets_df
+    return(df_dict)
 
 def limpiar_recuento(df_dict):
     ## LIMPIEZA RECUENTO DE CREDITOS

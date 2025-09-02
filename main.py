@@ -13,7 +13,8 @@ import os
 
 #Setup de los logs
 setup_logger()
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
 
 # Cargar configuración
 with open(Path("config/settings.json"), encoding="utf-8") as f:
@@ -49,16 +50,11 @@ def scrapper(settings,base_path):
 
     login_generic(driver, url_ucampus, USERNAME, PASSWORD, ucampus_selectors, success_check)
 
-    try:
-        df_dict_ucampus = extraer_datos_ucampus(driver)
-    except Exception as e:
-        log.exception("Error during scraping")
-
-    try:
-        file_name = f"data_UCAMPUS_{rut}" 
-        excel_exporter(file_name, path, df_dict_ucampus)
-    except:
-        log.exception("Error during export")
+    
+    df_dict_ucampus = extraer_datos_ucampus(driver)
+    file_name = f"data_UCAMPUS_{rut}" 
+    excel_exporter(file_name, path, df_dict_ucampus)
+    logger.info("ℹ️️Error during export")
 
     ## UCURSOS
     url_ucursos = 'https://www.u-cursos.cl/'
@@ -86,4 +82,3 @@ def scrapper(settings,base_path):
 # Limpieza de datos
 scrapper(settings,base_path)
 limpiar_datos(settings,base_path)
-    

@@ -13,3 +13,4 @@ def excel_exporter(file_name, path, df_dict):
     with pd.ExcelWriter(final_path, engine='xlsxwriter') as writer:
         for sheet_name, df in df_dict.items():
             df.to_excel(writer, sheet_name=sheet_name, index=False)
+    logger.info(f"💾 Excel creado: {final_path}")

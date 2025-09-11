@@ -14,7 +14,7 @@ import os
 #Setup de los logs
 setup_logger()
 logger = logging.getLogger(__name__)
-# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ 🚀 📦 📊 🎨 🖊️ 📌 ➡️ 🎯 🏷️ 📏
 
 # Cargar configuración
 with open(Path("config/settings.json"), encoding="utf-8") as f:
@@ -54,7 +54,6 @@ def scrapper(settings,base_path):
     df_dict_ucampus = extraer_datos_ucampus(driver)
     file_name = f"data_UCAMPUS_{rut}" 
     excel_exporter(file_name, path, df_dict_ucampus)
-    logger.info("ℹ️️Error during export")
 
     ## UCURSOS
     url_ucursos = 'https://www.u-cursos.cl/'

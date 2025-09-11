@@ -5,7 +5,7 @@ from config.logger import setup_logger
 
 setup_logger() 
 logger = logging.getLogger(__name__)
-# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ logger.info("")
+# Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ 🚀 📦 📊 🎨 🖊️ 📌 ➡️ 🎯 🏷️ 📏
 
 def excel_exporter(file_name, path, df_dict):
     # Guardar en Excel

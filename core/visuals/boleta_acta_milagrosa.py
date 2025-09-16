@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 # Create barcode from string
 def generate_barcode(
     data: str,
-    filename: str = "barcode.png"
+    filename: str = "data/barcode.png"
 ) -> str:
     """
     Generate a barcode image from a string and save it with transparent background.
@@ -231,7 +231,7 @@ def create_receipt_with_shadow_and_barcode(
     
     # Example placeholder (replace this with your actual value from df or a separate variable)
     title_line1 = "Acta Milagrosa"
-    title_line2 = "MA1002 - Introducción al Álgebra"
+    title_line2 = df["Codigo_curso"].iloc[1]
 
     # Draw titles
     logger.info("🖊️ Dibujando títulos del recibo...")

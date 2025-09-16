@@ -107,19 +107,23 @@ def datos_resumen(driver: WebDriver) -> tuple[pd.DataFrame, pd.DataFrame]:
             cra_car = columnas[1].text.strip().split("\n")
             cra = cra_car[0]
             car = cra_car[1] #columnas[2].text.strip()
-
+            if car == '0%':
+                continue  # saltar semestres sin ramos terminados
             semestre =[]
 
             for col in columnas[3:]:
                 texto = col.text.strip()
                 if texto and texto != '\xa0':
                     cursos_semestre = texto.split(" - ")
+                    if len(cursos_semestre) < 2:
+                        continue # saltar entradas sin nota final
                     cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
                     resumen_semestre = {}
                     resumen_semestre["Curso"] = cursos_semestre[0]
                     resumen_semestre["Créditos"] = float(cursos_semestre[1])
                     resumen_semestre["Nota"] = cursos_semestre[2]
                     semestre.append(resumen_semestre)
+            
             cursos[periodo] = semestre
             datos.append({
                 "Periodo": periodo,
@@ -127,7 +131,7 @@ def datos_resumen(driver: WebDriver) -> tuple[pd.DataFrame, pd.DataFrame]:
                 "CAR": car
             })
         filas = []
-
+        print(datos)
         for periodo, ramos in cursos.items():
             for ramo in ramos:
                 filas.append({
@@ -336,6 +340,11 @@ def datos_UB(driver: WebDriver) -> pd.DataFrame:
     """
     logger.info("📦 Recuperando historial de pagos de UB")
     url = "https://ucampus.uchile.cl/m/fcfm_unidades_becarias/becas_alumno"
+    
+    if "medicina" in driver.current_url:
+        url = "https://ucampus.uchile.cl/m/medicina_bia/recuento_uds"
+        return(pd.DataFrame())  # Medicina no tiene historial de UB's asignadas 
+    
     df_final = pd.DataFrame()
     try:
         logger.info("🔁 Navegando a página de Unidades Becarias...")
@@ -431,6 +440,11 @@ def datos_UB_eliminados(driver: WebDriver) -> pd.DataFrame:
     logger.info("📦 Recuperando historial de UB eliminadas")
     df_final = pd.DataFrame()
     url = "https://ucampus.uchile.cl/m/fcfm_unidades_becarias/becas_alumno"
+    
+    if "medicina" in driver.current_url:
+        url = "https://ucampus.uchile.cl/m/medicina_bia/recuento_uds"
+        return(pd.DataFrame())  # Medicina no tiene historial de UB's asignadas 
+    
     try:
         logger.info("🔁 Navegando a página de Unidades Becarias...")
         wait = WebDriverWait(driver, 10)
@@ -526,7 +540,12 @@ def datos_recuento(driver: WebDriver) -> pd.DataFrame:
         and an empty DataFrame is returned.
     """
     logger.info("📦 Recuperando Recuento de UDs")
+    
     url = "https://ucampus.uchile.cl/m/fcfm_bia/recuento_uds"
+    
+    if "medicina" in driver.current_url:
+        url = "https://ucampus.uchile.cl/m/medicina_bia/recuento_uds"
+    
     try:
         driver.get(url)
         wait = WebDriverWait(driver, 10)

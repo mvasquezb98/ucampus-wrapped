@@ -24,3 +24,7 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 scrapper(settings,base_path)
 #Limpieza de datos
 limpiar_datos(settings,base_path)
+import pandas as pd
+from core.visuals.boleta_acta_milagrosa import create_receipt_with_shadow_and_barcode
+df = pd.read_excel("data/clean_data.xlsx",sheet_name="Acta_Milagrosa")
+create_receipt_with_shadow_and_barcode(df, texture_path = "assets/textures/texture2.jpg", barcode_text = "Acta Milagrosa", output_path = "data/receipt.png")

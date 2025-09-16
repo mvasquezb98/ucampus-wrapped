@@ -1744,3 +1744,1572 @@ Stacktrace:
 2025-09-15 17:34:10 - INFO - ✅ Acta Milagrosa identificada.
 2025-09-15 17:34:10 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 14
 2025-09-15 17:34:10 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-16 15:44:19 - INFO - 🚀 Creando recibo con sombra y código de barras...
+2025-09-16 15:44:19 - INFO - 🎨 Textura cargada correctamente
+2025-09-16 15:44:19 - ERROR - ⚠️ No se encontraron fuentes personalizadas. Se usará la fuente por defecto
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\visuals\boleta_acta_milagrosa.py", line 224, in create_receipt_with_shadow_and_barcode
+    font = ImageFont.truetype("IBMPlexMono-Regular.ttf", 16)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 880, in truetype
+    return freetype(font)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 877, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 285, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-09-16 15:44:19 - INFO - 🖊️ Dibujando títulos del recibo...
+2025-09-16 15:44:19 - INFO - 📦 Dibujando cursos y notas...
+2025-09-16 15:44:19 - INFO - 🚀 Generando código de barras...
+2025-09-16 15:44:19 - ERROR - ❌ Error al generar el código de barras
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\visuals\boleta_acta_milagrosa.py", line 37, in generate_barcode
+    CODE128 = barcode.get_barcode_class('code128') # type: ignore
+AttributeError: module 'barcode' has no attribute 'get_barcode_class'
+2025-09-16 15:48:08 - INFO - 🚀 Creando recibo con sombra y código de barras...
+2025-09-16 15:48:08 - INFO - 🎨 Textura cargada correctamente
+2025-09-16 15:48:08 - ERROR - ⚠️ No se encontraron fuentes personalizadas. Se usará la fuente por defecto
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\visuals\boleta_acta_milagrosa.py", line 224, in create_receipt_with_shadow_and_barcode
+    font = ImageFont.truetype("IBMPlexMono-Regular.ttf", 16)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 880, in truetype
+    return freetype(font)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 877, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 285, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-09-16 15:48:08 - INFO - 🖊️ Dibujando títulos del recibo...
+2025-09-16 15:48:08 - INFO - 📦 Dibujando cursos y notas...
+2025-09-16 15:48:08 - INFO - 🚀 Generando código de barras...
+2025-09-16 15:48:08 - INFO - 💾 Código de barras guardado en: temp_barcode.png
+2025-09-16 15:48:08 - INFO - ℹ️ Insertando código de barras en el recibo desde: temp_barcode.png
+2025-09-16 15:48:08 - INFO - ✅ Código de barras insertado en posición (50, 730)
+2025-09-16 15:48:08 - INFO - 💾 Recibo guardado en: data/receipt.png
+2025-09-16 15:51:40 - INFO - 🚀 Creando recibo con sombra y código de barras...
+2025-09-16 15:51:40 - INFO - 🎨 Textura cargada correctamente
+2025-09-16 15:51:40 - ERROR - ⚠️ No se encontraron fuentes personalizadas. Se usará la fuente por defecto
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\visuals\boleta_acta_milagrosa.py", line 224, in create_receipt_with_shadow_and_barcode
+    font = ImageFont.truetype("IBMPlexMono-Regular.ttf", 16)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 880, in truetype
+    return freetype(font)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 877, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\PIL\ImageFont.py", line 285, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-09-16 15:51:40 - INFO - 🖊️ Dibujando títulos del recibo...
+2025-09-16 15:51:40 - INFO - 📦 Dibujando cursos y notas...
+2025-09-16 15:51:40 - INFO - 🚀 Generando código de barras...
+2025-09-16 15:51:40 - INFO - 💾 Código de barras guardado en: temp_barcode.png
+2025-09-16 15:51:40 - INFO - ℹ️ Insertando código de barras en el recibo desde: temp_barcode.png
+2025-09-16 15:51:40 - INFO - ✅ Código de barras insertado en posición (50, 730)
+2025-09-16 15:51:40 - INFO - 💾 Recibo guardado en: data/receipt.png
+2025-09-16 15:54:18 - INFO - ====== WebDriver manager ======
+2025-09-16 15:54:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 15:54:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 15:54:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 15:54:19 - INFO - WebDriver version 140.0.7339.82 selected
+2025-09-16 15:54:19 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.82/win32/chromedriver-win32.zip
+2025-09-16 15:54:19 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.82/win32/chromedriver-win32.zip
+2025-09-16 15:54:20 - INFO - Driver downloading response is 200
+2025-09-16 15:54:20 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 15:54:21 - INFO - Driver has been saved in cache [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82]
+2025-09-16 15:54:23 - INFO - ✅ Chrome driver initialized.
+2025-09-16 15:55:06 - INFO - 🔁 Navegando a página de login...
+2025-09-16 15:55:10 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 15:55:11 - INFO - 📌 Credenciales ingresadas
+2025-09-16 15:55:11 - INFO - ✅ Login exitoso
+2025-09-16 15:55:11 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 15:55:11 - INFO - 📦 Recuperando indicadores
+2025-09-16 15:55:11 - ERROR - ⚠️ Error al cargar Indicadores del Estudiante
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 45, in datos_indicadores
+    indicadores_dl = driver.find_element(By.ID, "indicadores")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="indicadores"]"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:11 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 15:55:11 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 93, in datos_resumen
+    driver.execute_script("document.getElementById('resumen').style.display = 'block';")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 551, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: Cannot read properties of null (reading 'style')
+  (Session info: chrome=140.0.7339.128)
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe5b597]
+	(No symbol) [0x0xe5dbe3]
+	(No symbol) [0x0xee390d]
+	(No symbol) [0x0xec101c]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:11 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 15:55:27 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:27 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 15:55:37 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 279, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:37 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 15:55:37 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 15:55:48 - ERROR - ⚠️ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 345, in datos_UB
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:48 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 15:55:48 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 15:55:58 - ERROR - ❌ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 438, in datos_UB_eliminados
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:55:58 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 15:56:08 - ERROR - ❌ Error al obtener el recuento de UDs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 535, in datos_recuento
+    tabla = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "excel")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 15:56:08 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 15:56:09 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_204719071.xlsx
+2025-09-16 15:56:09 - INFO - 🔁 Navegando a página de login...
+2025-09-16 15:56:12 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 15:56:13 - INFO - 📌 Credenciales ingresadas
+2025-09-16 15:56:13 - INFO - ✅ Login exitoso
+2025-09-16 16:08:27 - INFO - ====== WebDriver manager ======
+2025-09-16 16:08:28 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 16:08:28 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 16:08:29 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 16:08:30 - INFO - ✅ Chrome driver initialized.
+2025-09-16 16:08:36 - INFO - 🔁 Navegando a página de login...
+2025-09-16 16:08:39 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 16:08:39 - INFO - 📌 Credenciales ingresadas
+2025-09-16 16:08:39 - INFO - ✅ Login exitoso
+2025-09-16 16:08:39 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 16:08:39 - INFO - 📦 Recuperando indicadores
+2025-09-16 16:08:39 - ERROR - ⚠️ Error al cargar Indicadores del Estudiante
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 45, in datos_indicadores
+    indicadores_dl = driver.find_element(By.ID, "indicadores")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="indicadores"]"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:08:39 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 16:08:39 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 93, in datos_resumen
+    driver.execute_script("document.getElementById('resumen').style.display = 'block';")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 551, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: Cannot read properties of null (reading 'style')
+  (Session info: chrome=140.0.7339.128)
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe5b597]
+	(No symbol) [0x0xe5dbe3]
+	(No symbol) [0x0xee390d]
+	(No symbol) [0x0xec101c]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:08:39 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 16:08:57 - INFO - ====== WebDriver manager ======
+2025-09-16 16:08:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 16:08:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 16:08:58 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 16:08:59 - INFO - ✅ Chrome driver initialized.
+2025-09-16 16:08:59 - INFO - 🔁 Navegando a página de login...
+2025-09-16 16:09:03 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 16:09:04 - INFO - 📌 Credenciales ingresadas
+2025-09-16 16:09:04 - INFO - ✅ Login exitoso
+2025-09-16 16:09:04 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 16:09:04 - INFO - 📦 Recuperando indicadores
+2025-09-16 16:09:05 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 16:09:05 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 16:09:05 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 16:09:05 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 16:09:05 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 16:09:20 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:09:20 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 16:09:31 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 279, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:09:31 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 16:09:31 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 16:09:41 - ERROR - ⚠️ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 345, in datos_UB
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:09:41 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 16:09:41 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 16:09:52 - ERROR - ❌ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 438, in datos_UB_eliminados
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:09:52 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 16:10:02 - ERROR - ❌ Error al obtener el recuento de UDs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 535, in datos_recuento
+    tabla = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "excel")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 16:10:02 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 16:10:02 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_204719071.xlsx
+2025-09-16 16:10:02 - INFO - 🔁 Navegando a página de login...
+2025-09-16 16:10:06 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 16:10:07 - INFO - 📌 Credenciales ingresadas
+2025-09-16 16:10:07 - INFO - ✅ Login exitoso
+2025-09-16 17:01:09 - INFO - ====== WebDriver manager ======
+2025-09-16 17:01:10 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:01:10 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:01:10 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:01:11 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:01:11 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:01:15 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:01:16 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:01:16 - INFO - ✅ Login exitoso
+2025-09-16 17:01:16 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:01:16 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:01:17 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:01:17 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:01:17 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:01:17 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:01:17 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:01:33 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:01:33 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 17:01:43 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 279, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:01:43 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 17:01:43 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 17:01:54 - ERROR - ⚠️ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 345, in datos_UB
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:01:54 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 17:01:54 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 17:02:04 - ERROR - ❌ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 438, in datos_UB_eliminados
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:02:04 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 17:02:14 - ERROR - ❌ Error al obtener el recuento de UDs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 535, in datos_recuento
+    tabla = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "excel")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:02:14 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 17:02:15 - INFO - 💾 Excel creado: C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_204719071.xlsx
+2025-09-16 17:02:15 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:02:18 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:02:19 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:02:19 - INFO - ✅ Login exitoso
+2025-09-16 17:22:49 - INFO - ====== WebDriver manager ======
+2025-09-16 17:22:50 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:22:50 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:22:50 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:22:52 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:22:52 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:22:55 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:22:57 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:22:57 - INFO - ✅ Login exitoso
+2025-09-16 17:22:57 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:22:57 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:22:57 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:22:57 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:22:57 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:22:58 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:22:58 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:23:13 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:23:13 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 17:23:24 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 279, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:23:24 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 17:23:24 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 17:23:34 - ERROR - ⚠️ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 345, in datos_UB
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:23:34 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 17:23:34 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-16 17:23:45 - ERROR - ❌ Error general al navegar en Unidades Becarias: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 438, in datos_UB_eliminados
+    wait.until(EC.presence_of_element_located((By.ID, "ano_chosen")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:23:45 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 17:23:55 - ERROR - ❌ Error al obtener el recuento de UDs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 535, in datos_recuento
+    tabla = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "excel")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:23:55 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 17:23:55 - INFO - 💾 Excel creado: C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_204719071.xlsx
+2025-09-16 17:23:55 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:23:59 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:24:00 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:24:00 - INFO - ✅ Login exitoso
+2025-09-16 17:26:07 - INFO - 📋 Iniciando extracción de urls de u-cursos
+2025-09-16 17:26:08 - INFO - ✅ 67 urls de u-cursos obtenidos
+2025-09-16 17:26:08 - INFO - 🚀 Inicio webscrapping de u-cursos
+2025-09-16 17:26:08 - INFO - 📦Recuperando notas obtenidas por ramo
+2025-09-16 17:26:13 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10059/1/notas/alumno
+2025-09-16 17:26:15 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10060/2/notas/alumno
+2025-09-16 17:26:17 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10061/2/notas/alumno
+2025-09-16 17:26:20 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10062/2/notas/alumno
+2025-09-16 17:26:22 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/MI04020505002/5/notas/alumno
+2025-09-16 17:29:09 - INFO - ℹ️️ Total de notas registradas: 818
+2025-09-16 17:29:09 - INFO - ✅ Recuperación de notas finalizada
+2025-09-16 17:29:09 - INFO - 📦 Recuperando estadísticas de las actas
+2025-09-16 17:29:11 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:29:13 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:29:16 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:29:18 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:29:20 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:29:22 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 17:31:51 - INFO - ℹ️️ Total de actas registradas: 488
+2025-09-16 17:31:51 - INFO - ✅ Recuperación de estadísticas de actas finalizada
+2025-09-16 17:31:51 - INFO - ✅ Extracción de datos de u-cursos completada
+2025-09-16 17:31:51 - INFO - 💾 Excel creado: C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCURSOS_204719071.xlsx
+2025-09-16 17:40:18 - INFO - ====== WebDriver manager ======
+2025-09-16 17:40:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:40:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:40:19 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:40:20 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:40:20 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:40:24 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:40:26 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:40:26 - INFO - ✅ Login exitoso
+2025-09-16 17:40:26 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:40:26 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:40:26 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:40:26 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:40:26 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:43:25 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:43:25 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:43:40 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:43:40 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 17:44:43 - INFO - ====== WebDriver manager ======
+2025-09-16 17:44:45 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:44:45 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:44:45 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:44:46 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:44:46 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:44:49 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:44:51 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:44:51 - INFO - ✅ Login exitoso
+2025-09-16 17:44:51 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:44:51 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:44:51 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:44:51 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:44:52 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:44:52 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:44:52 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:45:07 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 184, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:45:07 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 17:45:18 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 279, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x107d2a3+66419]
+	GetHandleVerifier [0x0x107d2e4+66484]
+	(No symbol) [0x0xe54bd3]
+	(No symbol) [0x0xe9e958]
+	(No symbol) [0x0xe9ecfb]
+	(No symbol) [0x0xee5152]
+	(No symbol) [0x0xec1064]
+	(No symbol) [0x0xee28a1]
+	(No symbol) [0x0xec0e16]
+	(No symbol) [0x0xe925ce]
+	(No symbol) [0x0xe934a4]
+	GetHandleVerifier [0x0x12c5ee3+2461619]
+	GetHandleVerifier [0x0x12c0f66+2441270]
+	GetHandleVerifier [0x0x10a6242+234258]
+	GetHandleVerifier [0x0x1096208+168664]
+	GetHandleVerifier [0x0x109d1ad+197245]
+	GetHandleVerifier [0x0x10855f8+100040]
+	GetHandleVerifier [0x0x1085792+100450]
+	GetHandleVerifier [0x0x106f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 17:45:18 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 17:45:18 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 17:45:18 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 17:45:23 - INFO - ✅ Datos de recuento extraídos correctamente.
+2025-09-16 17:45:23 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 17:45:53 - INFO - ====== WebDriver manager ======
+2025-09-16 17:45:54 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:45:54 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:45:54 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:45:55 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:45:55 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:45:59 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:46:00 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:46:00 - INFO - ✅ Login exitoso
+2025-09-16 17:46:00 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:46:00 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:46:01 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:46:01 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:46:01 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:46:01 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:46:01 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:47:39 - INFO - ====== WebDriver manager ======
+2025-09-16 17:47:40 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:47:40 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:47:40 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 17:47:41 - INFO - ✅ Chrome driver initialized.
+2025-09-16 17:47:41 - INFO - 🔁 Navegando a página de login...
+2025-09-16 17:47:45 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 17:47:47 - INFO - 📌 Credenciales ingresadas
+2025-09-16 17:47:47 - INFO - ✅ Login exitoso
+2025-09-16 17:47:47 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 17:47:47 - INFO - 📦 Recuperando indicadores
+2025-09-16 17:47:47 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 17:47:47 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 17:47:47 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 17:47:48 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 117, in datos_resumen
+    cursos_semestre = cursos_semestre[0].split()+[cursos_semestre[1]]
+IndexError: list index out of range
+2025-09-16 17:47:48 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 17:59:57 - INFO - ====== WebDriver manager ======
+2025-09-16 17:59:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:59:58 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 17:59:58 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 18:00:01 - INFO - ✅ Chrome driver initialized.
+2025-09-16 18:00:01 - INFO - 🔁 Navegando a página de login...
+2025-09-16 18:00:04 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 18:00:06 - INFO - 📌 Credenciales ingresadas
+2025-09-16 18:00:06 - INFO - ✅ Login exitoso
+2025-09-16 18:00:06 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 18:00:06 - INFO - 📦 Recuperando indicadores
+2025-09-16 18:00:06 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 18:00:06 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 18:00:06 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 18:13:06 - INFO - ====== WebDriver manager ======
+2025-09-16 18:13:08 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 18:13:08 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-16 18:13:08 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-16 18:13:09 - INFO - ✅ Chrome driver initialized.
+2025-09-16 18:13:09 - INFO - 🔁 Navegando a página de login...
+2025-09-16 18:13:13 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 18:13:14 - INFO - 📌 Credenciales ingresadas
+2025-09-16 18:13:14 - INFO - ✅ Login exitoso
+2025-09-16 18:13:14 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-16 18:13:14 - INFO - 📦 Recuperando indicadores
+2025-09-16 18:13:15 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-16 18:13:15 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-16 18:13:15 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-16 18:13:58 - INFO - ℹ️️ Extraídas 11 filas.
+2025-09-16 18:13:58 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-16 18:13:58 - INFO - 📦 Recuperando cursos dictados
+2025-09-16 18:14:13 - ERROR - ⚠️ Error al cargar labores docentes
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 188, in datos_labores_docentes
+    header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x75d2a3+66419]
+	GetHandleVerifier [0x0x75d2e4+66484]
+	(No symbol) [0x0x534bd3]
+	(No symbol) [0x0x57e958]
+	(No symbol) [0x0x57ecfb]
+	(No symbol) [0x0x5c5152]
+	(No symbol) [0x0x5a1064]
+	(No symbol) [0x0x5c28a1]
+	(No symbol) [0x0x5a0e16]
+	(No symbol) [0x0x5725ce]
+	(No symbol) [0x0x5734a4]
+	GetHandleVerifier [0x0x9a5ee3+2461619]
+	GetHandleVerifier [0x0x9a0f66+2441270]
+	GetHandleVerifier [0x0x786242+234258]
+	GetHandleVerifier [0x0x776208+168664]
+	GetHandleVerifier [0x0x77d1ad+197245]
+	GetHandleVerifier [0x0x7655f8+100040]
+	GetHandleVerifier [0x0x765792+100450]
+	GetHandleVerifier [0x0x74f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 18:14:13 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-16 18:14:23 - ERROR - ⚠️ Error al cargar Exámenes de Grado y/o Título
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 283, in datos_examenes_y_titulo
+    titulo_h2 = WebDriverWait(driver, 10).until(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x75d2a3+66419]
+	GetHandleVerifier [0x0x75d2e4+66484]
+	(No symbol) [0x0x534bd3]
+	(No symbol) [0x0x57e958]
+	(No symbol) [0x0x57ecfb]
+	(No symbol) [0x0x5c5152]
+	(No symbol) [0x0x5a1064]
+	(No symbol) [0x0x5c28a1]
+	(No symbol) [0x0x5a0e16]
+	(No symbol) [0x0x5725ce]
+	(No symbol) [0x0x5734a4]
+	GetHandleVerifier [0x0x9a5ee3+2461619]
+	GetHandleVerifier [0x0x9a0f66+2441270]
+	GetHandleVerifier [0x0x786242+234258]
+	GetHandleVerifier [0x0x776208+168664]
+	GetHandleVerifier [0x0x77d1ad+197245]
+	GetHandleVerifier [0x0x7655f8+100040]
+	GetHandleVerifier [0x0x765792+100450]
+	GetHandleVerifier [0x0x74f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-16 18:14:23 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-16 18:14:23 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-16 18:14:23 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-16 18:14:29 - INFO - ✅ Datos de recuento extraídos correctamente.
+2025-09-16 18:14:29 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-16 18:14:29 - INFO - 💾 Excel creado: C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_204719071.xlsx
+2025-09-16 18:14:29 - INFO - 🔁 Navegando a página de login...
+2025-09-16 18:14:33 - INFO - 🔎 Esperando campo de usuario...
+2025-09-16 18:14:34 - INFO - 📌 Credenciales ingresadas
+2025-09-16 18:14:34 - INFO - ✅ Login exitoso
+2025-09-16 18:14:37 - INFO - 📋 Iniciando extracción de urls de u-cursos
+2025-09-16 18:14:38 - INFO - ✅ 67 urls de u-cursos obtenidos
+2025-09-16 18:14:38 - INFO - 🚀 Inicio webscrapping de u-cursos
+2025-09-16 18:14:38 - INFO - 📦Recuperando notas obtenidas por ramo
+2025-09-16 18:14:43 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10059/1/notas/alumno
+2025-09-16 18:14:45 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10060/2/notas/alumno
+2025-09-16 18:14:48 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10061/2/notas/alumno
+2025-09-16 18:14:50 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/ME10062/2/notas/alumno
+2025-09-16 18:14:52 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/medicina/2025/2/MI04020505002/5/notas/alumno
+2025-09-16 18:18:06 - INFO - ℹ️️ Total de notas registradas: 818
+2025-09-16 18:18:06 - INFO - ✅ Recuperación de notas finalizada
+2025-09-16 18:18:06 - INFO - 📦 Recuperando estadísticas de las actas
+2025-09-16 18:18:09 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:18:11 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:18:13 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:18:16 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:18:18 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:18:21 - WARNING - ⚠️ Error cargando página de acta
+2025-09-16 18:21:40 - INFO - ℹ️️ Total de actas registradas: 488
+2025-09-16 18:21:40 - INFO - ✅ Recuperación de estadísticas de actas finalizada
+2025-09-16 18:21:40 - INFO - ✅ Extracción de datos de u-cursos completada
+2025-09-16 18:21:41 - INFO - 💾 Excel creado: C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCURSOS_204719071.xlsx

@@ -16,12 +16,10 @@ Así que, me puse manos a la obra a intentar hacer web scrapping usando la infor
 - Proceso de extracción logrado. Se exportan archivos Excel con los datos extraídos.
 - Hay hitos académicos no considerados en la extracción, como la participación en grupos organizados, u otros que desconozca.
 - También hay casos borde sin considerar, como es el caso de las doble titulaciones, o si se tiene una carrera previa, etc.
-- PENDIENTE: Limpieza de los datos extraídos y creación de nuevas variables.
 
 **Acta milagrosa**
 - Se tiene un prototipo al estilo de receiptify, con datos de prueba.
-- PENDIENTE: Algoritmo que identifique el ramo milagroso, es decir, cargar automaticamente los datos reales para la acta milagrosa
-
+- El algoritmo para encontrar el acta milagrosa ya funciona :D
 <p align="left" width="100%">
   <img width="170" height="250" alt="image" src="https://github.com/user-attachments/assets/b2699326-aac3-42d1-95f3-d4747dd8a040" />
 </p>

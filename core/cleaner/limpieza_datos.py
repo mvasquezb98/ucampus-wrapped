@@ -588,7 +588,6 @@ def limpiar_datos(
     df_dict = limpiar_semestre(df_dict)
     df_dict = limpiar_docencia(df_dict)
     df_dict = limpiar_UB(df_dict)
-    #df_dict["Acta_Milagrosa"] = get_acta_milagrosa_data()
     Evaluaciones, Datos, Historial, UB, Docencia = creacion_tablas_finales(df_dict)
     Acta_Milagrosa = get_acta_milagrosa_data(Evaluaciones, Historial)
     exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia,Acta_Milagrosa, settings,base_path)

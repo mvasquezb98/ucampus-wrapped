@@ -9,42 +9,6 @@ setup_logger()
 logger = logging.getLogger(__name__)
 # Emojis: ✅ ❌ ⚠️ 📂 💾 ℹ️️ 🚀 📦 📊 🎨 🖊️ 📌 ➡️ 🎯 🏷️ 📏
 
-def load_acta_data(
-    file_name: str,
-    sheet_name: str
-) -> pd.DataFrame:
-    """
-    Load a specific sheet from an Excel file containing acta data.
-
-    This function builds the path to the Excel file located in the
-    ``datos/output`` directory relative to the project root, and attempts
-    to read the specified sheet using pandas. If the file or sheet cannot
-    be read, it logs the error and returns an empty DataFrame.
-
-    Args:
-        file_name (str): Name of the Excel file (e.g., "clean_data.xlsx").
-        sheet_name (str): Name of the sheet to load from the Excel file.
-
-    Returns:
-        pandas.DataFrame: A DataFrame containing the contents of the
-        requested sheet. Returns an empty DataFrame if loading fails.
-
-    Raises:
-        Exception: Logs and handles any exception that occurs during
-        file access or reading. The exception is not re-raised; instead,
-        an empty DataFrame is returned.
-    """
-    base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    file_path = os.path.join(base_path,'data',file_name)
-    
-    try:
-        data = pd.read_excel(file_path, sheet_name)
-        logger.info(f"✅ Datos cargados para identificar Acta Milagrosa ({file_name} - Sheet: {sheet_name}). ")
-        return data
-    except Exception as e:
-        logger.exception(f"❌ Error cargando los datos: {e}")
-        return pd.DataFrame()
-
 def limpiar_texto(s: str) -> str:
     """
     Normalize and clean a text string for consistent comparisons.
@@ -77,7 +41,7 @@ def limpiar_texto(s: str) -> str:
         if unicodedata.category(c) != 'Mn'
     )
     return s
-def create_df_examen() -> pd.DataFrame:
+def create_df_examen(Evaluaciones, Historial) -> pd.DataFrame:
     """
     Build a DataFrame containing only exam records from the "Evaluaciones" sheet.
 
@@ -166,7 +130,7 @@ def create_df_examen() -> pd.DataFrame:
     df_evaluaciones = pd.DataFrame(columns=["Curso URL","Codigo_curso","Año","Semestre","Periodo","Evaluación","Promedio"])
     
     try:
-        df_evaluaciones = load_acta_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
+        df_evaluaciones = Evaluaciones
     except Exception as e:
          logger.exception(f"❌ Error en la carga de datos: {e}.")
          
@@ -193,7 +157,7 @@ def create_df_examen() -> pd.DataFrame:
     logger.info(f"✅ Filtrado de exámenes completado.")
     return(df_examen)
 
-def create_df_nota_presentacion(df_examen) -> pd.DataFrame:
+def create_df_nota_presentacion(Evaluaciones, Historial,df_examen) -> pd.DataFrame:
     """
     Build a DataFrame with actual or estimated "Nota de Presentación" for each course.
 
@@ -259,7 +223,7 @@ def create_df_nota_presentacion(df_examen) -> pd.DataFrame:
     df_evaluaciones = pd.DataFrame(columns=["Curso URL","Codigo_curso","Año","Semestre","Periodo","Evaluación","Promedio"])
     
     try:
-        df_evaluaciones = load_acta_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
+        df_evaluaciones = Evaluaciones
     except Exception as e:
          logger.exception(f"❌ Error en la carga de datos: {e}.")
     
@@ -290,7 +254,7 @@ def create_df_nota_presentacion(df_examen) -> pd.DataFrame:
     df_historial = pd.DataFrame(columns=["Curso URL","Codigo_curso","Año","Semestre","Periodo","Promedio","Nota Final"])
     
     try:
-        df_historial = load_acta_data(file_name='clean_data.xlsx', sheet_name='Historial')
+        df_historial = Historial
     except Exception as e:
          logger.exception(f"❌ Error en la carga de datos: {e}.")
              
@@ -351,7 +315,7 @@ def create_df_candidatos_acta_milagrosa(
     logger.info("✅ Identificación de candidatos a Acta Milagrosa completada.")
     return(df_candidatos_acta_milagrosa)
     
-def get_acta_milagrosa_data() -> (pd.DataFrame):
+def get_acta_milagrosa_data(Evaluaciones, Historial) -> (pd.DataFrame):
     """
     Identify and build the "Acta Milagrosa" DataFrame.
 
@@ -394,14 +358,14 @@ def get_acta_milagrosa_data() -> (pd.DataFrame):
     logger.info("🚀 Iniciando identificación de Acta Milagrosa...")
     df_evaluaciones = pd.DataFrame(columns=["Curso URL","Codigo_curso","Año","Semestre","Periodo","Evaluación","Promedio"])
     df_historial = pd.DataFrame(columns=["Curso URL","Codigo_curso","Año","Semestre","Periodo","Promedio","Nota Final"])
-    df_examen = create_df_examen() 
-    df_nota_presentacion = create_df_nota_presentacion(df_examen)
+    df_examen = create_df_examen(Evaluaciones, Historial) 
+    df_nota_presentacion = create_df_nota_presentacion(Evaluaciones, Historial,df_examen)
     df_candidatos_acta_milagrosa = create_df_candidatos_acta_milagrosa(df_nota_presentacion)
     df_acta_milagrosa = pd.DataFrame(columns=df_evaluaciones.columns)
 
     try:
-        df_evaluaciones = load_acta_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
-        df_historial = load_acta_data(file_name='clean_data.xlsx', sheet_name='Historial')
+        df_evaluaciones = Evaluaciones
+        df_historial = Historial
     except Exception as e:
         logger.exception(f"❌ Error en la carga de datos: {e}.")    
     

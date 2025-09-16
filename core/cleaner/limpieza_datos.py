@@ -411,7 +411,7 @@ def limpiar_UB(
 
 def creacion_tablas_finales(
     df_dict: dict[str, pd.DataFrame]
-    ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
     Build the final, curated tables from previously cleaned intermediate DataFrames.
 
@@ -474,8 +474,8 @@ def creacion_tablas_finales(
     Historial["Créditos"] = pd.merge(Historial,df_dict["semestre"],on=["Codigo_curso","Periodo"])["Creditos"]
     UB = pd.concat([df_dict["UB"], df_dict["UB_eliminadas"]], ignore_index=True)
     Docencia = df_dict["docencia"].copy()
-    Acta_Milagrosa = df_dict["Acta_Milagrosa"]
-    return(Evaluaciones, Datos, Historial, UB, Docencia, Acta_Milagrosa)
+    
+    return(Evaluaciones, Datos, Historial, UB, Docencia)
 
 def exportar_tablas_finales(
     Evaluaciones: pd.DataFrame,
@@ -588,6 +588,7 @@ def limpiar_datos(
     df_dict = limpiar_semestre(df_dict)
     df_dict = limpiar_docencia(df_dict)
     df_dict = limpiar_UB(df_dict)
-    df_dict["Acta_Milagrosa"] = get_acta_milagrosa_data()
-    Evaluaciones, Datos, Historial, UB, Docencia, Acta_Milagrosa = creacion_tablas_finales(df_dict)
+    #df_dict["Acta_Milagrosa"] = get_acta_milagrosa_data()
+    Evaluaciones, Datos, Historial, UB, Docencia = creacion_tablas_finales(df_dict)
+    Acta_Milagrosa = get_acta_milagrosa_data(Evaluaciones, Historial)
     exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia,Acta_Milagrosa, settings,base_path)

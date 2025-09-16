@@ -180,9 +180,9 @@ def datos_labores_docentes(driver: WebDriver) -> pd.DataFrame:
     df_dictados = pd.DataFrame()
     try:
         # Esperar a que el h2 con id "cursos_dictados" esté presente
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 15)
         header = wait.until(EC.presence_of_element_located((By.ID, "cursos_dictados")))
-
+        
         # Obtener la tabla que viene justo después
         tabla = header.find_element(By.XPATH, 'following-sibling::table[1]')
 
@@ -200,9 +200,7 @@ def datos_labores_docentes(driver: WebDriver) -> pd.DataFrame:
 
         # Convertir a DataFrame
         df_dictados = pd.DataFrame(datos, columns=encabezados)
-
-        # Rename columns just in case they're weirdly named
-        df_dictados.columns = [col.strip() for col in df_dictados.columns]
+        print(df_dictados.columns)
 
         # Step 1: Rename first column to 'Nº' if needed
         if df_dictados.columns[0] != "Nº":
@@ -215,12 +213,12 @@ def datos_labores_docentes(driver: WebDriver) -> pd.DataFrame:
         for val in df_dictados["Nº"]:
             if str(val).isdigit():
                 if len(str(val))==4:
-                    current_year = val
-                    año_col.append(current_year)
+                    current_year = int(val)
                 else:  # Save the year from the separator row
-                    año_col.append(None)
+                    año_col.append(current_year)
 
         # Step 3: Assign 'Año' column and drop rows that are separators
+        df_dictados = df_dictados[df_dictados["Nº"].astype(str).str.len() <= 3].copy()
         df_dictados["Año"] = año_col
         df_dictados = df_dictados[df_dictados["Nº"].apply(lambda x: str(x).isdigit())].reset_index(drop=True)
 
@@ -239,6 +237,7 @@ def datos_labores_docentes(driver: WebDriver) -> pd.DataFrame:
         # Optional: Reorder columns for better readability
         df_dictados = df_dictados[["Año", "Semestre", "Nombre", "Código", "Cargo"]]
         df_dictados.dropna(inplace=True)
+        logger.info(f"ℹ️️ Total de Labores docentes registradas: {len(df_dictados)}")
         logger.info("✅ Carga Exitosa: Labores docentes")
         return(df_dictados)
     except Exception:

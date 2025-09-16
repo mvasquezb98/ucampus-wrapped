@@ -361,3 +361,1386 @@ NameError: name 'df_indicadores' is not defined
 2025-08-27 12:11:29 - INFO - ✅ Botón de ingreso encontrado
 2025-08-27 12:11:31 - INFO - 🚀 Formulario enviado
 2025-08-27 12:11:31 - INFO - ✅ Login exitoso
+2025-09-13 16:28:18 - INFO - ====== WebDriver manager ======
+2025-09-13 16:28:21 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-13 16:28:21 - ERROR - ❌ Failed to initialize Chrome driver.
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\mvasq\anaconda3\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002BD8273D9D0>: Failed to resolve 'googlechromelabs.github.io' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='googlechromelabs.github.io', port=443): Max retries exceeded with url: /chrome-for-testing/latest-patch-versions-per-build.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002BD8273D9D0>: Failed to resolve 'googlechromelabs.github.io' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\http.py", line 32, in get
+    resp = requests.get(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='googlechromelabs.github.io', port=443): Max retries exceeded with url: /chrome-for-testing/latest-patch-versions-per-build.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002BD8273D9D0>: Failed to resolve 'googlechromelabs.github.io' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\navegador.py", line 55, in get_chrome_driver
+    service=Service(ChromeDriverManager().install()),
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\chrome.py", line 40, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\manager.py", line 35, in _get_driver_binary_path
+    binary_path = self._cache_manager.find_driver(driver)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\driver_cache.py", line 107, in find_driver
+    driver_version = self.get_cache_key_driver_version(driver)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\driver_cache.py", line 154, in get_cache_key_driver_version
+    return driver.get_driver_version_to_download()
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\driver.py", line 48, in get_driver_version_to_download
+    return self.get_latest_release_version()
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\drivers\chrome.py", line 59, in get_latest_release_version
+    response = self._http_client.get(url)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\webdriver_manager\core\http.py", line 35, in get
+    raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
+requests.exceptions.ConnectionError: Could not reach host. Are you offline?
+2025-09-13 16:30:53 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-13 16:30:53 - ERROR - ❌ Error cargando los datos: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\cleaner\acta_milagrosa.py", line 41, in load_acta_data
+    data = pd.read_excel(file_path, sheet_name)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+2025-09-13 16:30:53 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-13 16:35:02 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-13 16:35:02 - ERROR - ❌ Error cargando los datos: [Errno 2] No such file or directory: 'C:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+Traceback (most recent call last):
+  File "C:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\cleaner\acta_milagrosa.py", line 41, in load_acta_data
+    data = pd.read_excel(file_path, sheet_name)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+2025-09-13 16:35:02 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 10:34:43 - INFO - ====== WebDriver manager ======
+2025-09-15 10:34:48 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 10:34:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 10:34:49 - INFO - There is no [win64] chromedriver "140.0.7339.82" for browser google-chrome "140.0.7339" in cache
+2025-09-15 10:34:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 10:34:49 - INFO - WebDriver version 140.0.7339.82 selected
+2025-09-15 10:34:49 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.82/win32/chromedriver-win32.zip
+2025-09-15 10:34:49 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.82/win32/chromedriver-win32.zip
+2025-09-15 10:34:49 - INFO - Driver downloading response is 200
+2025-09-15 10:34:49 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 10:34:52 - INFO - Driver has been saved in cache [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82]
+2025-09-15 10:34:57 - INFO - ✅ Chrome driver initialized.
+2025-09-15 10:35:19 - INFO - 🔁 Navegando a página de login...
+2025-09-15 10:35:23 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 10:35:26 - INFO - 📌 Credenciales ingresadas
+2025-09-15 10:35:26 - INFO - ✅ Login exitoso
+2025-09-15 10:35:26 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 10:35:26 - INFO - 📦 Recuperando indicadores
+2025-09-15 10:35:27 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 10:35:27 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 10:35:27 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 10:35:32 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 10:35:32 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 10:35:32 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 10:35:33 - INFO - ✅ Carga Exitosa: Labores docentes
+2025-09-15 10:35:33 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-15 10:35:33 - INFO - ✅ Carga Exitosa: Exámenes de Grado y/o Título
+2025-09-15 10:35:33 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-15 10:35:33 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 10:35:36 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 10:35:39 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 10:35:43 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 10:35:51 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 10:35:58 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 10:36:02 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 10:36:07 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 10:36:11 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 10:36:15 - INFO - ✅ Carga Exitosa: Historial de pagos de UB
+2025-09-15 10:36:15 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-15 10:36:15 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 10:36:17 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 10:36:30 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-09-15 10:36:30 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 10:36:44 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2024.
+2025-09-15 10:36:44 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 10:36:58 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2023.
+2025-09-15 10:36:58 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 10:37:13 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2022.
+2025-09-15 10:37:13 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 10:37:27 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2021.
+2025-09-15 10:37:27 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 10:37:42 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2020.
+2025-09-15 10:37:42 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 10:37:46 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 10:38:00 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2018.
+2025-09-15 10:38:00 - INFO - ✅ Carga Exitosa: UB's eliminadas
+2025-09-15 10:38:00 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-15 10:38:13 - INFO - ✅ Datos de recuento extraídos correctamente.
+2025-09-15 10:38:13 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-15 10:38:13 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_19842174K.xlsx
+2025-09-15 10:38:13 - INFO - 🔁 Navegando a página de login...
+2025-09-15 10:38:17 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 10:38:20 - INFO - 📌 Credenciales ingresadas
+2025-09-15 10:38:20 - INFO - ✅ Login exitoso
+2025-09-15 10:38:21 - INFO - 📋 Iniciando extracción de urls de u-cursos
+2025-09-15 10:38:25 - INFO - ✅ 71 urls de u-cursos obtenidos
+2025-09-15 10:38:25 - INFO - 🚀 Inicio webscrapping de u-cursos
+2025-09-15 10:38:25 - INFO - 📦Recuperando notas obtenidas por ramo
+2025-09-15 10:38:36 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2023/2/EI2090/1/notas/alumno
+2025-09-15 10:40:39 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2020/1/DR180A/3/notas/alumno
+2025-09-15 10:41:23 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2019/1/EI0031/1/notas/alumno
+2025-09-15 10:42:34 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0006/1/notas/alumno
+2025-09-15 10:42:36 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0014/1/notas/alumno
+2025-09-15 10:42:38 - INFO - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI1090/1/notas/alumno
+2025-09-15 10:42:55 - INFO - ℹ️️ Total de notas registradas: 788
+2025-09-15 10:42:55 - INFO - ✅ Recuperación de notas finalizada
+2025-09-15 10:42:55 - INFO - 📦 Recuperando estadísticas de las actas
+2025-09-15 10:45:27 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:13 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:15 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:18 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:20 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:22 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:24 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:26 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:29 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:31 - ERROR - ❌ Error cargando página de acta: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucursos.py", line 166, in data_actas
+    table = driver.find_element(By.CSS_SELECTOR, "table.detalle")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"table.detalle"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0xfed2a3+66419]
+	GetHandleVerifier [0x0xfed2e4+66484]
+	(No symbol) [0x0xdc4bd3]
+	(No symbol) [0x0xe0e958]
+	(No symbol) [0x0xe0ecfb]
+	(No symbol) [0x0xe55152]
+	(No symbol) [0x0xe31064]
+	(No symbol) [0x0xe528a1]
+	(No symbol) [0x0xe30e16]
+	(No symbol) [0x0xe025ce]
+	(No symbol) [0x0xe034a4]
+	GetHandleVerifier [0x0x1235ee3+2461619]
+	GetHandleVerifier [0x0x1230f66+2441270]
+	GetHandleVerifier [0x0x1016242+234258]
+	GetHandleVerifier [0x0x1006208+168664]
+	GetHandleVerifier [0x0x100d1ad+197245]
+	GetHandleVerifier [0x0xff55f8+100040]
+	GetHandleVerifier [0x0xff5792+100450]
+	GetHandleVerifier [0x0xfdf74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 10:46:31 - INFO - ℹ️️ Total de actas registradas: 483
+2025-09-15 10:46:31 - INFO - ✅ Recuperación de estadísticas de actas finalizada
+2025-09-15 10:46:31 - INFO - ✅ Extracción de datos de u-cursos completada
+2025-09-15 10:46:31 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCURSOS_19842174K.xlsx
+2025-09-15 10:46:34 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 10:46:34 - ERROR - ❌ Error cargando los datos: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\cleaner\acta_milagrosa.py", line 41, in load_acta_data
+    data = pd.read_excel(file_path, sheet_name)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+2025-09-15 10:46:34 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 10:58:38 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 10:58:38 - ERROR - ❌ Error cargando los datos: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\cleaner\acta_milagrosa.py", line 41, in load_acta_data
+    data = pd.read_excel(file_path, sheet_name)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\mvasq\\OneDrive\\Documentos\\ucampus_wrapped\\core\\datos\\output\\clean_data.xlsx'
+2025-09-15 10:58:38 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 10:58:59 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 10:58:59 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 10:58:59 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 10:58:59 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 10:58:59 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 10:58:59 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 10:58:59 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 10:58:59 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 10:58:59 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 10:58:59 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 10:58:59 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 10:58:59 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 10:58:59 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 10:58:59 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 10:58:59 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 10:58:59 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 10:58:59 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 10:58:59 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:02:16 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:02:16 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:02:16 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:02:16 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:02:16 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:02:16 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:02:16 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:02:16 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:02:16 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:02:16 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:02:16 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:02:16 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:02:16 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:02:16 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:02:16 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:02:16 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:02:16 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 11:02:16 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:02:37 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:02:37 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:02:37 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:02:37 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:02:37 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:02:37 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:02:37 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:02:37 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:02:37 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:02:37 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:02:37 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:02:37 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:02:37 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:02:37 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:02:37 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:02:37 - INFO - 📌curso_acta_milagrosa: IN4232
+2025-09-15 11:02:37 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:02:37 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 11:02:37 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:04:05 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:04:05 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:04:05 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:04:05 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:04:05 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:04:05 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:04:05 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:04:05 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:04:05 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:04:05 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:04:05 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:04:05 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:04:05 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:04:05 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:04:05 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:04:05 - INFO - 📌curso_acta_milagrosa: IN4232
+2025-09-15 11:04:05 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:04:05 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 11:04:05 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:04:33 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:04:33 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:04:33 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:04:33 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:04:33 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:04:33 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:04:33 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:04:33 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:04:33 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:04:33 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:04:33 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:04:33 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:04:33 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:04:33 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:04:33 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:04:33 - INFO - 📌 curso_acta_milagrosa: IN4232
+2025-09-15 11:04:33 - INFO - 📌 len(df_acta_milagrosa): 0
+2025-09-15 11:04:33 - INFO - 📌 len(row_acta): 0
+2025-09-15 11:04:33 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:04:33 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 11:04:33 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:08:02 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:08:02 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:08:02 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:08:02 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:08:02 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:08:02 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:08:02 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:08:02 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:08:02 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:08:02 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:08:02 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:08:02 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:08:02 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:08:02 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:08:02 - INFO - df_evaluaciones len: 0
+2025-09-15 11:08:02 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:08:02 - INFO - 📌 curso_acta_milagrosa: IN4232
+2025-09-15 11:08:02 - INFO - 📌 len(df_acta_milagrosa): 0
+2025-09-15 11:08:02 - INFO - 📌 len(row_acta): 0
+2025-09-15 11:08:02 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:08:02 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 0
+2025-09-15 11:08:02 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 11:10:57 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 11:10:57 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:10:57 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 11:10:57 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 11:10:57 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 11:10:57 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 11:10:57 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:10:57 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 11:10:57 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 11:10:58 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:10:58 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 11:10:58 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 11:10:58 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 11:10:58 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 11:10:58 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 11:10:58 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 11:10:58 - INFO - 📌 df_evaluaciones len: 788
+2025-09-15 11:10:58 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 11:10:58 - INFO - 📌 curso_acta_milagrosa: IN4232
+2025-09-15 11:10:58 - INFO - 📌 len(df_acta_milagrosa): 13
+2025-09-15 11:10:58 - INFO - 📌 len(row_acta): 1
+2025-09-15 11:10:58 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 11:10:58 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 14
+2025-09-15 11:10:58 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 16:25:55 - INFO - ====== WebDriver manager ======
+2025-09-15 16:25:56 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:25:56 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:25:56 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 16:25:59 - INFO - ✅ Chrome driver initialized.
+2025-09-15 16:26:51 - INFO - 🔁 Navegando a página de login...
+2025-09-15 16:26:55 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 16:26:55 - INFO - 📌 Credenciales ingresadas
+2025-09-15 16:26:55 - INFO - ✅ Login exitoso
+2025-09-15 16:26:55 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 16:26:55 - INFO - 📦 Recuperando indicadores
+2025-09-15 16:26:55 - ERROR - ⚠️ Error al cargar Indicadores del Estudiante
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 45, in datos_indicadores
+    indicadores_dl = driver.find_element(By.ID, "indicadores")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 922, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="indicadores"]"}
+  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+	GetHandleVerifier [0x0x88d2a3+66419]
+	GetHandleVerifier [0x0x88d2e4+66484]
+	(No symbol) [0x0x664bd3]
+	(No symbol) [0x0x6ae958]
+	(No symbol) [0x0x6aecfb]
+	(No symbol) [0x0x6f5152]
+	(No symbol) [0x0x6d1064]
+	(No symbol) [0x0x6f28a1]
+	(No symbol) [0x0x6d0e16]
+	(No symbol) [0x0x6a25ce]
+	(No symbol) [0x0x6a34a4]
+	GetHandleVerifier [0x0xad5ee3+2461619]
+	GetHandleVerifier [0x0xad0f66+2441270]
+	GetHandleVerifier [0x0x8b6242+234258]
+	GetHandleVerifier [0x0x8a6208+168664]
+	GetHandleVerifier [0x0x8ad1ad+197245]
+	GetHandleVerifier [0x0x8955f8+100040]
+	GetHandleVerifier [0x0x895792+100450]
+	GetHandleVerifier [0x0x87f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 16:26:55 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 16:26:55 - ERROR - ⚠️ Error al cargar resumen
+Traceback (most recent call last):
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\core\scrapper\ucampus.py", line 93, in datos_resumen
+    driver.execute_script("document.getElementById('resumen').style.display = 'block';")
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 551, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in execute
+    self.error_handler.check_response(response)
+  File "c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\.venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: Cannot read properties of null (reading 'style')
+  (Session info: chrome=140.0.7339.128)
+Stacktrace:
+	GetHandleVerifier [0x0x88d2a3+66419]
+	GetHandleVerifier [0x0x88d2e4+66484]
+	(No symbol) [0x0x664bd3]
+	(No symbol) [0x0x66b597]
+	(No symbol) [0x0x66dbe3]
+	(No symbol) [0x0x6f390d]
+	(No symbol) [0x0x6d101c]
+	(No symbol) [0x0x6f28a1]
+	(No symbol) [0x0x6d0e16]
+	(No symbol) [0x0x6a25ce]
+	(No symbol) [0x0x6a34a4]
+	GetHandleVerifier [0x0xad5ee3+2461619]
+	GetHandleVerifier [0x0xad0f66+2441270]
+	GetHandleVerifier [0x0x8b6242+234258]
+	GetHandleVerifier [0x0x8a6208+168664]
+	GetHandleVerifier [0x0x8ad1ad+197245]
+	GetHandleVerifier [0x0x8955f8+100040]
+	GetHandleVerifier [0x0x895792+100450]
+	GetHandleVerifier [0x0x87f74a+10266]
+	BaseThreadInitThunk [0x0x76995d49+25]
+	RtlInitializeExceptionChain [0x0x77e0d6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x77e0d661+561]
+
+2025-09-15 16:26:55 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 16:27:13 - INFO - ====== WebDriver manager ======
+2025-09-15 16:27:14 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:27:14 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:27:14 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 16:27:15 - INFO - ✅ Chrome driver initialized.
+2025-09-15 16:27:38 - INFO - 🔁 Navegando a página de login...
+2025-09-15 16:27:42 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 16:27:43 - INFO - 📌 Credenciales ingresadas
+2025-09-15 16:27:43 - INFO - ✅ Login exitoso
+2025-09-15 16:27:43 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 16:27:43 - INFO - 📦 Recuperando indicadores
+2025-09-15 16:27:44 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 16:27:44 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 16:27:44 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 16:27:45 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 16:27:45 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 16:27:45 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 16:27:45 - INFO - ℹ️️ Total de Labores docentes registradas: 0
+2025-09-15 16:27:45 - INFO - ✅ Carga Exitosa: Labores docentes
+2025-09-15 16:27:45 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-15 16:27:45 - INFO - ✅ Carga Exitosa: Exámenes de Grado y/o Título
+2025-09-15 16:27:45 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-15 16:27:45 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 16:27:46 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 16:27:48 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 16:27:51 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 16:27:56 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 16:27:59 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 16:28:02 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 16:28:05 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 16:28:08 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 16:28:11 - INFO - ✅ Carga Exitosa: Historial de pagos de UB
+2025-09-15 16:28:11 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-15 16:28:11 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 16:28:12 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 16:28:24 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-09-15 16:28:24 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 16:28:37 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2024.
+2025-09-15 16:28:37 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 16:28:50 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2023.
+2025-09-15 16:28:50 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 16:29:03 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2022.
+2025-09-15 16:29:03 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 16:29:17 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2021.
+2025-09-15 16:29:17 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 16:29:29 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2020.
+2025-09-15 16:29:29 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 16:29:32 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 16:29:45 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2018.
+2025-09-15 16:29:45 - INFO - ✅ Carga Exitosa: UB's eliminadas
+2025-09-15 16:29:45 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-15 16:29:49 - INFO - ✅ Datos de recuento extraídos correctamente.
+2025-09-15 16:29:49 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-15 16:29:49 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_19842174K.xlsx
+2025-09-15 16:29:49 - INFO - 🔁 Navegando a página de login...
+2025-09-15 16:29:53 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 16:29:55 - INFO - 📌 Credenciales ingresadas
+2025-09-15 16:29:55 - INFO - ✅ Login exitoso
+2025-09-15 16:29:56 - INFO - 📋 Iniciando extracción de urls de u-cursos
+2025-09-15 16:29:57 - INFO - ✅ 71 urls de u-cursos obtenidos
+2025-09-15 16:29:57 - INFO - 🚀 Inicio webscrapping de u-cursos
+2025-09-15 16:29:57 - INFO - 📦Recuperando notas obtenidas por ramo
+2025-09-15 16:30:05 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2023/2/EI2090/1/notas/alumno
+2025-09-15 16:31:30 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2020/1/DR180A/3/notas/alumno
+2025-09-15 16:32:01 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2019/1/EI0031/1/notas/alumno
+2025-09-15 16:32:48 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0006/1/notas/alumno
+2025-09-15 16:32:50 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0014/1/notas/alumno
+2025-09-15 16:32:52 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI1090/1/notas/alumno
+2025-09-15 16:33:03 - INFO - ℹ️️ Total de notas registradas: 788
+2025-09-15 16:33:03 - INFO - ✅ Recuperación de notas finalizada
+2025-09-15 16:33:03 - INFO - 📦 Recuperando estadísticas de las actas
+2025-09-15 16:34:56 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:34 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:36 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:39 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:41 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:43 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:45 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:47 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:50 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:52 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 16:35:52 - INFO - ℹ️️ Total de actas registradas: 483
+2025-09-15 16:35:52 - INFO - ✅ Recuperación de estadísticas de actas finalizada
+2025-09-15 16:35:52 - INFO - ✅ Extracción de datos de u-cursos completada
+2025-09-15 16:35:52 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCURSOS_19842174K.xlsx
+2025-09-15 16:35:55 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 16:35:55 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 16:35:55 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 16:35:55 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 16:35:55 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 16:35:55 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 16:35:55 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 16:35:55 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 16:35:55 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 16:35:55 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 16:35:55 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 16:35:55 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 16:35:55 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 16:35:55 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 16:35:55 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 16:35:55 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 16:35:55 - INFO - 📌 df_evaluaciones len: 788
+2025-09-15 16:35:55 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 16:35:55 - INFO - 📌 curso_acta_milagrosa: IN4232
+2025-09-15 16:35:55 - INFO - 📌 len(df_acta_milagrosa): 13
+2025-09-15 16:35:55 - INFO - 📌 len(row_acta): 1
+2025-09-15 16:35:55 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 16:35:55 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 14
+2025-09-15 16:35:55 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.
+2025-09-15 16:40:53 - INFO - ====== WebDriver manager ======
+2025-09-15 16:40:55 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:40:55 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:40:55 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 16:40:56 - INFO - ✅ Chrome driver initialized.
+2025-09-15 16:42:17 - INFO - ====== WebDriver manager ======
+2025-09-15 16:42:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:42:19 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:42:19 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 16:42:20 - INFO - ✅ Chrome driver initialized.
+2025-09-15 16:45:27 - INFO - ====== WebDriver manager ======
+2025-09-15 16:45:28 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:45:28 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 16:45:28 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 16:45:29 - INFO - ✅ Chrome driver initialized.
+2025-09-15 16:45:29 - INFO - 🔁 Navegando a página de login...
+2025-09-15 16:45:33 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 16:45:35 - INFO - 📌 Credenciales ingresadas
+2025-09-15 16:45:35 - INFO - ✅ Login exitoso
+2025-09-15 16:45:35 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 16:45:35 - INFO - 📦 Recuperando indicadores
+2025-09-15 16:45:35 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 16:45:35 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 16:45:35 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 16:45:36 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 16:45:36 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 16:45:36 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:07:24 - INFO - ====== WebDriver manager ======
+2025-09-15 17:07:25 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:07:25 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:07:25 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:07:26 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:07:26 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:07:30 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:07:32 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:07:32 - INFO - ✅ Login exitoso
+2025-09-15 17:07:32 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:07:32 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:07:32 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:07:32 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:07:32 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:07:33 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:07:33 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:07:33 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:14:26 - INFO - ====== WebDriver manager ======
+2025-09-15 17:14:27 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:14:27 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:14:27 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:14:29 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:14:29 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:14:32 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:14:34 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:14:34 - INFO - ✅ Login exitoso
+2025-09-15 17:14:34 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:14:34 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:14:34 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:14:34 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:14:34 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:14:35 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:14:35 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:14:35 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:15:42 - INFO - ====== WebDriver manager ======
+2025-09-15 17:15:43 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:15:43 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:15:43 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:15:44 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:15:44 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:15:48 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:15:50 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:15:50 - INFO - ✅ Login exitoso
+2025-09-15 17:15:50 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:15:50 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:15:50 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:15:50 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:15:50 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:15:51 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:15:51 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:15:51 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:20:05 - INFO - ====== WebDriver manager ======
+2025-09-15 17:20:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:20:07 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:20:07 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:20:08 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:20:08 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:20:12 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:20:13 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:20:13 - INFO - ✅ Login exitoso
+2025-09-15 17:20:13 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:20:13 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:20:14 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:20:14 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:20:14 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:20:15 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:20:15 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:20:15 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:21:58 - INFO - ====== WebDriver manager ======
+2025-09-15 17:22:00 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:22:00 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:22:00 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:22:01 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:22:01 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:22:05 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:22:06 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:22:06 - INFO - ✅ Login exitoso
+2025-09-15 17:22:06 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:22:06 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:22:07 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:22:07 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:22:07 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:22:08 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:22:08 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:22:08 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:23:30 - INFO - ℹ️️ Total de Labores docentes registradas: 7
+2025-09-15 17:23:34 - INFO - ✅ Carga Exitosa: Labores docentes
+2025-09-15 17:23:45 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-15 17:23:47 - INFO - ✅ Carga Exitosa: Exámenes de Grado y/o Título
+2025-09-15 17:23:47 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-15 17:23:47 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 17:23:48 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 17:23:51 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 17:24:08 - INFO - ====== WebDriver manager ======
+2025-09-15 17:24:35 - INFO - ====== WebDriver manager ======
+2025-09-15 17:24:36 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:24:37 - INFO - Get LATEST chromedriver version for google-chrome
+2025-09-15 17:24:37 - INFO - Driver [C:\Users\mvasq\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache
+2025-09-15 17:24:38 - INFO - ✅ Chrome driver initialized.
+2025-09-15 17:24:38 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:24:41 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:24:43 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:24:43 - INFO - ✅ Login exitoso
+2025-09-15 17:24:43 - INFO - 🚀 Inicio webscrapping de ucampus
+2025-09-15 17:24:43 - INFO - 📦 Recuperando indicadores
+2025-09-15 17:24:44 - INFO - ✅ Carga Exitosa: Indicadores
+2025-09-15 17:24:44 - INFO - 📦 Recuperando resumen de ramos cursados por semestre
+2025-09-15 17:24:44 - INFO - ℹ️️ Div 'resumen' visible. Extrayendo tabla...
+2025-09-15 17:24:45 - INFO - ℹ️️ Extraídas 15 filas.
+2025-09-15 17:24:45 - INFO - ✅ Carga Exitosa: Resumen notas
+2025-09-15 17:24:45 - INFO - 📦 Recuperando cursos dictados
+2025-09-15 17:24:45 - INFO - ℹ️️ Total de Labores docentes registradas: 7
+2025-09-15 17:24:45 - INFO - ✅ Carga Exitosa: Labores docentes
+2025-09-15 17:24:45 - INFO - 📦 Recuperando sección Exámenes de Grado y/o Título
+2025-09-15 17:24:45 - INFO - ✅ Carga Exitosa: Exámenes de Grado y/o Título
+2025-09-15 17:24:45 - INFO - 📦 Recuperando historial de pagos de UB
+2025-09-15 17:24:45 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 17:24:46 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 17:24:48 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 17:24:51 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 17:24:55 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 17:24:59 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 17:25:02 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 17:25:05 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 17:25:08 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 17:25:11 - INFO - ✅ Carga Exitosa: Historial de pagos de UB
+2025-09-15 17:25:11 - INFO - 📦 Recuperando historial de UB eliminadas
+2025-09-15 17:25:11 - INFO - 🔁 Navegando a página de Unidades Becarias...
+2025-09-15 17:25:12 - INFO - 📆 Extrayendo datos del año 2025...
+2025-09-15 17:25:24 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2025.
+2025-09-15 17:25:24 - INFO - 📆 Extrayendo datos del año 2024...
+2025-09-15 17:25:37 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2024.
+2025-09-15 17:25:37 - INFO - 📆 Extrayendo datos del año 2023...
+2025-09-15 17:25:50 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2023.
+2025-09-15 17:25:50 - INFO - 📆 Extrayendo datos del año 2022...
+2025-09-15 17:26:04 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2022.
+2025-09-15 17:26:04 - INFO - 📆 Extrayendo datos del año 2021...
+2025-09-15 17:26:17 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2021.
+2025-09-15 17:26:17 - INFO - 📆 Extrayendo datos del año 2020...
+2025-09-15 17:26:30 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2020.
+2025-09-15 17:26:30 - INFO - 📆 Extrayendo datos del año 2019...
+2025-09-15 17:26:33 - INFO - 📆 Extrayendo datos del año 2018...
+2025-09-15 17:26:46 - WARNING - ⚠️ No hay tabla de UBs Eliminadas para el año 2018.
+2025-09-15 17:26:46 - INFO - ✅ Carga Exitosa: UB's eliminadas
+2025-09-15 17:26:46 - INFO - 📦 Recuperando Recuento de UDs
+2025-09-15 17:26:51 - INFO - ✅ Datos de recuento extraídos correctamente.
+2025-09-15 17:26:51 - INFO - ✅ Extracción de datos de ucampus completada
+2025-09-15 17:26:51 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCAMPUS_19842174K.xlsx
+2025-09-15 17:26:51 - INFO - 🔁 Navegando a página de login...
+2025-09-15 17:26:54 - INFO - 🔎 Esperando campo de usuario...
+2025-09-15 17:26:56 - INFO - 📌 Credenciales ingresadas
+2025-09-15 17:26:56 - INFO - ✅ Login exitoso
+2025-09-15 17:26:57 - INFO - 📋 Iniciando extracción de urls de u-cursos
+2025-09-15 17:26:59 - INFO - ✅ 71 urls de u-cursos obtenidos
+2025-09-15 17:26:59 - INFO - 🚀 Inicio webscrapping de u-cursos
+2025-09-15 17:26:59 - INFO - 📦Recuperando notas obtenidas por ramo
+2025-09-15 17:27:07 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2023/2/EI2090/1/notas/alumno
+2025-09-15 17:28:48 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2020/1/DR180A/3/notas/alumno
+2025-09-15 17:29:29 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2019/1/EI0031/1/notas/alumno
+2025-09-15 17:30:35 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0006/1/notas/alumno
+2025-09-15 17:30:37 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI0014/1/notas/alumno
+2025-09-15 17:30:40 - WARNING - ⚠️ Tabla de notas no encontrada en https://www.u-cursos.cl/ingenieria/2017/1/EI1090/1/notas/alumno
+2025-09-15 17:30:55 - INFO - ℹ️️ Total de notas registradas: 788
+2025-09-15 17:30:55 - INFO - ✅ Recuperación de notas finalizada
+2025-09-15 17:30:55 - INFO - 📦 Recuperando estadísticas de las actas
+2025-09-15 17:33:05 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:48 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:50 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:52 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:54 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:57 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:33:59 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:34:01 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:34:03 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:34:06 - WARNING - ⚠️ Error cargando página de acta
+2025-09-15 17:34:06 - INFO - ℹ️️ Total de actas registradas: 483
+2025-09-15 17:34:06 - INFO - ✅ Recuperación de estadísticas de actas finalizada
+2025-09-15 17:34:06 - INFO - ✅ Extracción de datos de u-cursos completada
+2025-09-15 17:34:06 - INFO - 💾 Excel creado: c:\Users\mvasq\OneDrive\Documentos\ucampus_wrapped\data\data_UCURSOS_19842174K.xlsx
+2025-09-15 17:34:10 - INFO - 🚀 Iniciando identificación de Acta Milagrosa...
+2025-09-15 17:34:10 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 17:34:10 - INFO - 📦 Filtrando evaluaciones para los exámenes
+2025-09-15 17:34:10 - INFO - ⚠️ There are multiple exam entries for the same course. Please check the data.
+2025-09-15 17:34:10 - INFO - ℹ️️Total de exámenes registrados: 21
+2025-09-15 17:34:10 - INFO - ✅ Filtrado de exámenes completado.
+2025-09-15 17:34:10 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 17:34:10 - INFO - 📦 Filtrando evaluaciones para las Notas de Presentación
+2025-09-15 17:34:10 - INFO - 📦 Cargando datos del Historial para estimar Notas de Presentación faltantes
+2025-09-15 17:34:10 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 17:34:10 - INFO - ℹ️️Total de Notas de Presentación: 17
+2025-09-15 17:34:10 - INFO - ✅ Cálculo de Notas de Presentación completado.
+2025-09-15 17:34:10 - INFO - ℹ️️Total de candidatos a Acta Milagrosa: 9
+2025-09-15 17:34:10 - INFO - ✅ Identificación de candidatos a Acta Milagrosa completada.
+2025-09-15 17:34:10 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Evaluaciones). 
+2025-09-15 17:34:10 - INFO - ✅ Datos cargados para identificar Acta Milagrosa (clean_data.xlsx - Sheet: Historial). 
+2025-09-15 17:34:10 - INFO - 📌 df_evaluaciones len: 788
+2025-09-15 17:34:10 - INFO - ℹ️️ Identificando Acta Milagrosa...
+2025-09-15 17:34:10 - INFO - 📌 curso_acta_milagrosa: IN4232
+2025-09-15 17:34:10 - INFO - 📌 len(df_acta_milagrosa): 13
+2025-09-15 17:34:10 - INFO - 📌 len(row_acta): 1
+2025-09-15 17:34:10 - INFO - ✅ Acta Milagrosa identificada.
+2025-09-15 17:34:10 - INFO - ℹ️️ Total de filas en Acta Milagrosa: 14
+2025-09-15 17:34:10 - INFO - ✅ Proceso de identificación de Acta Milagrosa completado.

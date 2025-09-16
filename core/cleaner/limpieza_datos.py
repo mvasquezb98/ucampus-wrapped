@@ -5,6 +5,7 @@ from pathlib import Path
 import logging
 from config.logger import setup_logger
 from typing import Any
+from core.cleaner.acta_milagrosa import get_acta_milagrosa_data
 
 setup_logger() 
 logger = logging.getLogger(__name__)
@@ -410,7 +411,7 @@ def limpiar_UB(
 
 def creacion_tablas_finales(
     df_dict: dict[str, pd.DataFrame]
-    ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
     Build the final, curated tables from previously cleaned intermediate DataFrames.
 
@@ -473,7 +474,8 @@ def creacion_tablas_finales(
     Historial["Créditos"] = pd.merge(Historial,df_dict["semestre"],on=["Codigo_curso","Periodo"])["Creditos"]
     UB = pd.concat([df_dict["UB"], df_dict["UB_eliminadas"]], ignore_index=True)
     Docencia = df_dict["docencia"].copy()
-    return(Evaluaciones, Datos, Historial, UB, Docencia)
+    Acta_Milagrosa = df_dict["Acta_Milagrosa"]
+    return(Evaluaciones, Datos, Historial, UB, Docencia, Acta_Milagrosa)
 
 def exportar_tablas_finales(
     Evaluaciones: pd.DataFrame,
@@ -481,6 +483,7 @@ def exportar_tablas_finales(
     Historial: pd.DataFrame,
     UB: pd.DataFrame,
     Docencia: pd.DataFrame,
+    Acta_Milagrosa: pd.DataFrame,
     settings: dict[str, Any],
     base_path: str
 ) -> None:
@@ -500,8 +503,7 @@ def exportar_tablas_finales(
             information in key–value format.
         Historial (pandas.DataFrame): DataFrame with academic history,
             plan usage, and credits.
-        UB (pandas.DataFrame): DataFrame with scholarship units
-            (active and eliminated).
+        UB (pandas.DataFrame): DataFrame with scholarship units (active and eliminated).
         Docencia (pandas.DataFrame): DataFrame with teaching activities.
         settings (dict[str, Any]): Configuration dictionary. Must include the
             key ``"output_dir"`` indicating the subdirectory for exports.
@@ -523,6 +525,7 @@ def exportar_tablas_finales(
         "Historial": Historial,
         "UB": UB,
         "Docencia": Docencia,
+        "Acta_Milagrosa": Acta_Milagrosa
     }
     with pd.ExcelWriter(salida, engine="xlsxwriter") as writer:
         for nombre, df in tablas.items():
@@ -585,5 +588,6 @@ def limpiar_datos(
     df_dict = limpiar_semestre(df_dict)
     df_dict = limpiar_docencia(df_dict)
     df_dict = limpiar_UB(df_dict)
-    Evaluaciones, Datos, Historial, UB, Docencia = creacion_tablas_finales(df_dict)
-    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia, settings,base_path)
+    df_dict["Acta_Milagrosa"] = get_acta_milagrosa_data()
+    Evaluaciones, Datos, Historial, UB, Docencia, Acta_Milagrosa = creacion_tablas_finales(df_dict)
+    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia,Acta_Milagrosa, settings,base_path)

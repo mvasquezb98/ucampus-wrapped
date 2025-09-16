@@ -113,12 +113,12 @@ def data_notas(
                         })
                         
                     except Exception as e:
-                        logger.exception(f"⚠️ Could not extract row: {e}")
+                        logger.warning(f"⚠️ Could not extract row: {e}")
             else:
-                logger.info(f"⚠️ Tabla de notas no encontrada en {link_notas}")
+                logger.warning(f"⚠️ Tabla de notas no encontrada en {link_notas}")
         
         except Exception as e:
-            logger.exception(f"❌ Error cargando página de notas: {e}")
+            logger.warning(f"⚠️ Error cargando página de notas")
     logger.info(f"ℹ️️ Total de notas registradas: {len(notas_data)}")
     logger.info(f"✅ Recuperación de notas finalizada")
     return(pd.DataFrame(notas_data))
@@ -183,9 +183,9 @@ def data_actas(
                         "Valor": value
                     })
                 except Exception as e:
-                    logger.exception(f"⚠️ Error parsing row in acta: {e}")
+                    logger.warning(f"⚠️ Error parsing row in acta")
         except Exception as e:
-            logger.exception(f"❌ Error cargando página de acta: {e}")
+            logger.warning(f"⚠️ Error cargando página de acta")
     logger.info(f"ℹ️️ Total de actas registradas: {len(acta_data)}")
     logger.info(f"✅ Recuperación de estadísticas de actas finalizada")
     return(pd.DataFrame(acta_data))        

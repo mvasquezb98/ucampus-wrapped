@@ -34,8 +34,8 @@ def load_acta_data(
         file access or reading. The exception is not re-raised; instead,
         an empty DataFrame is returned.
     """
-    base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    file_path = os.path.join(base_path,'datos', 'output',file_name)
+    base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    file_path = os.path.join(base_path,'data',file_name)
     
     try:
         data = pd.read_excel(file_path, sheet_name)
@@ -398,13 +398,26 @@ def get_acta_milagrosa_data() -> (pd.DataFrame):
     df_nota_presentacion = create_df_nota_presentacion(df_examen)
     df_candidatos_acta_milagrosa = create_df_candidatos_acta_milagrosa(df_nota_presentacion)
     df_acta_milagrosa = pd.DataFrame(columns=df_evaluaciones.columns)
+
+    try:
+        df_evaluaciones = load_acta_data(file_name='clean_data.xlsx', sheet_name='Evaluaciones')
+        df_historial = load_acta_data(file_name='clean_data.xlsx', sheet_name='Historial')
+    except Exception as e:
+        logger.exception(f"❌ Error en la carga de datos: {e}.")    
+    
+    logger.info(f"📌 df_evaluaciones len: {len(df_evaluaciones)}")
+
     try:    
         logger.info("ℹ️️ Identificando Acta Milagrosa...")
         curso_acta_milagrosa = df_candidatos_acta_milagrosa[df_candidatos_acta_milagrosa["Nota Presentacion estimada"] == df_candidatos_acta_milagrosa["Nota Presentacion estimada"].min()]["Codigo_curso"].tolist()[0]
-        logger.debug(f"📌curso_acta_milagrosa: {curso_acta_milagrosa}")
+        logger.info(f"📌 curso_acta_milagrosa: {curso_acta_milagrosa}")
+        
         df_acta_milagrosa = df_evaluaciones[df_evaluaciones["Codigo_curso"] == curso_acta_milagrosa]        
+        logger.info(f"📌 len(df_acta_milagrosa): {len(df_acta_milagrosa)}")
         
         row_acta = df_historial[df_historial["Codigo_curso"] == curso_acta_milagrosa]
+        logger.info(f"📌 len(row_acta): {len(row_acta)}")
+        
         row_acta["Evaluación"] = "Acta"
         row_acta = row_acta[["Curso URL","Evaluación","Promedio","Codigo_curso","Año", "Semestre","Periodo"]]
         row_acta.reindex(columns=df_acta_milagrosa.columns)

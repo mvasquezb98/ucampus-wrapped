@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 def load_scrapped_data(
     settings: dict[str, Any],
-    base_path: str
+    base_path: str,
+    rut: str
 ) -> dict[str, pd.DataFrame]:
     """
     Load Excel files from the configured output directory and return their
@@ -48,7 +49,7 @@ def load_scrapped_data(
     ucampus_sheets_df = {} 
     if os.path.exists(data_path):
         for file in os.listdir(data_path):
-            if file.endswith('.xlsx') and not file.startswith('~$'):
+            if rut in file and file.endswith('.xlsx') and not file.startswith('~$'):
                 file_path = os.path.join(data_path, file)
                 if 'ucursos' in file or 'UCURSOS' in file:
                     ucursos_sheets_df = pd.read_excel(file_path, sheet_name=None, engine='openpyxl')                
@@ -302,11 +303,14 @@ def limpiar_indicadores_titulo(
         format with " Fecha " and " Ingeniería Civil".
     """
     ##LIMPIEZA INDICADORES Y TITULO
-    df_dict["titulo"]["Fecha"] = df_dict["titulo"]["Examen / Título"].apply(lambda x: x.split(" Fecha ")[1])
-    df_dict["titulo"]["Examen / Título"] = df_dict["titulo"]["Examen / Título"].apply(lambda x: x.split(" Ingeniería Civil")[0])
-    df_dict["titulo"] = pd.DataFrame(df_dict["titulo"].iloc[0,:]).reset_index()
-    df_dict["titulo"].columns = ["Campo", "Valor"]
-    df_dict["indicadores"].columns = ["Campo", "Valor"]
+    try:
+        df_dict["titulo"]["Fecha"] = df_dict["titulo"]["Examen / Título"].apply(lambda x: x.split(" Fecha ")[1])
+        df_dict["titulo"]["Examen / Título"] = df_dict["titulo"]["Examen / Título"].apply(lambda x: x.split(" Ingeniería Civil")[0])
+        df_dict["titulo"] = pd.DataFrame(df_dict["titulo"].iloc[0,:]).reset_index()
+        df_dict["titulo"].columns = ["Campo", "Valor"]
+        df_dict["indicadores"].columns = ["Campo", "Valor"]
+    except:
+        logger.warning("⚠️ Could not clean 'titulo' or 'indicadores' tables.")
     return(df_dict)
 
 def limpiar_semestre(
@@ -340,9 +344,12 @@ def limpiar_semestre(
         columns are not present.
     """
     ## LIMPIEZA TABLA SEMESTRE
-    df_dict["semestre"]["Año"] = df_dict["semestre"]["Periodo"].str.extract(r"(\d{4})", expand=False).astype(int)
-    df_dict["semestre"]["Semestre"] = df_dict["semestre"]["Periodo"].apply(lambda x: 2 if "Otoño" in str(x) else (1 if "Primavera" in str(x) else (3 if "Verano" in str(x) else np.nan)))
-    df_dict["semestre"]["Codigo_curso"] = df_dict["semestre"]["Curso"].apply(lambda x: str(x.split("-")[0]))
+    try:
+        df_dict["semestre"]["Año"] = df_dict["semestre"]["Periodo"].str.extract(r"(\d{4})", expand=False).astype(int)
+        df_dict["semestre"]["Semestre"] = df_dict["semestre"]["Periodo"].apply(lambda x: 2 if "Otoño" in str(x) else (1 if "Primavera" in str(x) else (3 if "Verano" in str(x) else np.nan)))
+        df_dict["semestre"]["Codigo_curso"] = df_dict["semestre"]["Curso"].apply(lambda x: str(x.split("-")[0]))
+    except:
+        logger.warning("⚠️ Could not clean 'semestre' table.")
     return(df_dict)
 
 def limpiar_docencia(
@@ -374,9 +381,12 @@ def limpiar_docencia(
         columns are not present.
     """
     ## LIMPIEZA TABLA DOCENCIA
-    df_dict["docencia"]["Periodo"] = df_dict["docencia"]["Año"].astype(str) + " " + df_dict["docencia"]["Semestre"].astype(str)
-    df_dict["docencia"]["Semestre"] = df_dict["docencia"]["Semestre"].apply(lambda x: 2 if "Otoño" in str(x) else (1 if "Primavera" in str(x) else (3 if "Verano" in str(x) else np.nan)))
-    df_dict["docencia"]["Año"] = df_dict["docencia"]["Año"].astype(int)
+    try:
+        df_dict["docencia"]["Periodo"] = df_dict["docencia"]["Año"].astype(str) + " " + df_dict["docencia"]["Semestre"].astype(str)
+        df_dict["docencia"]["Semestre"] = df_dict["docencia"]["Semestre"].apply(lambda x: 2 if "Otoño" in str(x) else (1 if "Primavera" in str(x) else (3 if "Verano" in str(x) else np.nan)))
+        df_dict["docencia"]["Año"] = df_dict["docencia"]["Año"].astype(int)
+    except:
+        logger.warning("⚠️ Could not clean 'docencia' table.")
     return(df_dict)
 
 def limpiar_UB(
@@ -405,8 +415,11 @@ def limpiar_UB(
         Exception: If either "UB" or "UB_eliminadas" is missing from `df_dict`.
     """
     ## LIMPIEZA UB
-    df_dict["UB_eliminadas"]["Estado"] = "Eliminada"
-    df_dict["UB_eliminadas"] = df_dict["UB_eliminadas"].reindex(columns=df_dict["UB"].columns)
+    try:
+        df_dict["UB_eliminadas"]["Estado"] = "Eliminada"
+        df_dict["UB_eliminadas"] = df_dict["UB_eliminadas"].reindex(columns=df_dict["UB"].columns)
+    except:
+        logger.warning("⚠️ Could not clean 'UB' or 'UB_eliminadas' tables.")
     return(df_dict)
 
 def creacion_tablas_finales(
@@ -485,7 +498,8 @@ def exportar_tablas_finales(
     Docencia: pd.DataFrame,
     Acta_Milagrosa: pd.DataFrame,
     settings: dict[str, Any],
-    base_path: str
+    base_path: str,
+    rut: str
 ) -> None:
     """
     Export the final curated tables to a single Excel file.
@@ -518,7 +532,7 @@ def exportar_tablas_finales(
     """
     salida = Path(settings["output_dir"])
     data_path = os.path.join(base_path,salida)
-    salida = os.path.join(data_path,"clean_data.xlsx") 
+    salida = os.path.join(data_path,"clean_data_" + rut + ".xlsx") 
     tablas = {
         "Evaluaciones": Evaluaciones,
         "Datos": Datos,
@@ -534,7 +548,8 @@ def exportar_tablas_finales(
 
 def limpiar_datos(
     settings: dict[str, Any],
-    base_path: str
+    base_path: str,
+    rut: str
 ) -> None:        
     """
     Orchestrate the full data cleaning pipeline and export the final results.
@@ -579,7 +594,7 @@ def limpiar_datos(
         Errors are propagated after being raised in the underlying functions.
     """
     ## LIMPIEZA DE DATOS                  
-    df_dict = load_scrapped_data(settings,base_path)
+    df_dict = load_scrapped_data(settings,base_path,rut)
     df_dict = limpiar_recuento(df_dict)
     df_dict = limpiar_actas_ucursos(df_dict)
     df_dict = limpiar_notas_ucursos(df_dict)
@@ -590,4 +605,4 @@ def limpiar_datos(
     df_dict = limpiar_UB(df_dict)
     Evaluaciones, Datos, Historial, UB, Docencia = creacion_tablas_finales(df_dict)
     Acta_Milagrosa = get_acta_milagrosa_data(Evaluaciones, Historial)
-    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia,Acta_Milagrosa, settings,base_path)
+    exportar_tablas_finales(Evaluaciones, Datos, Historial, UB, Docencia,Acta_Milagrosa, settings,base_path,rut)

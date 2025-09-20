@@ -308,6 +308,8 @@ def create_df_candidatos_acta_milagrosa(
         Rows are sorted in ascending order by "Promedio" and then by
         "Nota Presentacion estimada".
     """
+    df_nota_presentacion_estimada["Nota"] = pd.to_numeric(df_nota_presentacion_estimada["Nota"])
+    df_nota_presentacion_estimada["Promedio"] = pd.to_numeric(df_nota_presentacion_estimada["Promedio"])
     df_candidatos_acta_milagrosa = df_nota_presentacion_estimada[df_nota_presentacion_estimada["Nota"] > df_nota_presentacion_estimada["Promedio"]]
     df_candidatos_acta_milagrosa.sort_values(by=["Promedio","Nota Presentacion estimada"], ascending=[True,True], inplace=True)
     logger.info(f"ℹ️️Total de candidatos a Acta Milagrosa: {len(df_candidatos_acta_milagrosa)}")

@@ -86,6 +86,7 @@ def scrapper(settings,base_path):
 
     file_name = f"data_UCURSOS_{rut}" 
     excel_exporter(file_name,path,df_dict_ucursos)
-
+    
     # Cerrar el driver
     driver.quit()
+    return(str(rut))
